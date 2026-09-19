@@ -1,0 +1,55 @@
+import h5py
+import numpy as np
+from pathlib import Path
+
+DATA_DIR = Path(
+    r"C:\Users\adaly\OneDrive\Documents\DMDeficientGalaxyTNG-1"
+    r"\data\TNG300-1\output\groups_099"
+)
+
+# Check a few representative files
+for number in [0, 1, 2, 100, 300, 599]:
+
+    path = DATA_DIR / f"fof_subhalo_tab_099.{number}.hdf5"
+
+    with h5py.File(path, "r") as f:
+
+        header = f["Header"].attrs
+
+        n_groups = int(header["Ngroups_ThisFile"])
+        n_subhalos = int(header["Nsubgroups_ThisFile"])
+
+        print("\n" + "=" * 60)
+        print(f"FILE {number}")
+        print(f"Groups:   {n_groups:,}")
+        print(f"Subhalos: {n_subhalos:,}")
+
+        if n_groups > 0:
+
+            group_first = f["Group"]["GroupFirstSub"][:]
+
+            print(
+                "GroupFirstSub:",
+                "min =", group_first.min(),
+                "max =", group_first.max()
+            )
+
+            print(
+                "First 10:",
+                group_first[:10]
+            )
+
+        if n_subhalos > 0:
+
+            sub_group = f["Subhalo"]["SubhaloGrNr"][:]
+
+            print(
+                "SubhaloGrNr:",
+                "min =", sub_group.min(),
+                "max =", sub_group.max()
+            )
+
+            print(
+                "First 10:",
+                sub_group[:10]
+            )
