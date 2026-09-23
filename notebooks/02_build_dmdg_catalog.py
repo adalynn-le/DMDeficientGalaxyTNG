@@ -53,6 +53,7 @@ subhalo_data = {
     "SubhaloVmax": [],
     "SubhaloVmaxRad": [],
     "SubhaloFlag": [],
+    "SnapByType": [],
 }
 
 group_data = {
@@ -175,7 +176,9 @@ for i, file in enumerate(files):
             ].append(
                 sub["SubhaloFlag"][:]
             )
-
+            subhalo_data["SnapByType"].append(
+                sub["SnapByType"][:]
+            )
 
 
         if n_groups > 0:
