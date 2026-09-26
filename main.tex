@@ -1,0 +1,91 @@
+\documentclass[twocolumn]{openjournal}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage{biblatex}
+\addbibresource{references.bib}
+
+\begin{document}
+
+\title{Dark-Matter-Deficient Galaxies in IllustrisTNG300-1:
+Population Statistics and Evolutionary Pathways}
+
+\author{Adalynn Le}
+\affiliation{Santa Teresa High School}
+
+\begin{abstract}
+
+\end{abstract}
+
+\keywords{galaxies: evolution --- galaxies: formation ---
+dark matter --- methods: numerical --- cosmology: simulations}
+
+\section{Introduction}
+\label{Introduction}
+Your introduction here.
+
+\section{Data and Methods}
+\label{Data and Methods}
+
+\subsection{IllustrisTNG 300-1}
+\label{IllustrisTNG 300-1}
+
+The IllustrisTNG 300-1 (referred to as TNG 300-1)magnetohydrodynamical simulation is the largest physical model in the TNG series, modeling baryon-inclusive galaxy formation on a simulation scale of \(300 \textup{ Mpc}\) \cite{nelson2024introducingtngclustersimulationoverview,nelson2021illustristngsimulationspublicdata,Pillepich_2017,Weinberger_2016}. The simulation employs Planck 2015 results ($\Omega_{\Lambda, 0} = 0.6911, \Omega_{m,0}=0.3089, \Omega_{b,0}=0.0486, \sigma_8=0.8159, n_s=0.9667 $ and $h=0.6774$) and Newtonian self-gravity \cite{2016Planck}. The resolutions are $m_\textup{baryon}=7.6 \times 10^6$ and $m_\textup{DM} = 4.0 \times 10^7$. The softening length for dark matter is $\epsilon_{\textup{DM}\star}=2.0 \rightarrow 1.0$ TNG 300-1 spans 100 snapshots (from redshift $z=127$ to $z=0.0$). TNG 300-1 employs friend-of-friend (FoF) algorithim to identify halos, SUBFIND identify subhaloes, and SUBLINK to identify and construct merger trees \cite{1985ApJ...292..371D, 2001MNRAS.328..726S, Rodriguez_Gomez_2016}. The TNG catalog contains $14,485,789$ subhalos.
+\subsection{Measurements and Models}
+\label{Measurements and Models}
+We employ the fraction of dark matter mass ($f_\textup{DM}$) as a measure of dark matter deficiency. This value is calculated using the formula in Equation \eqref{fDM Calculation}, where $M_\textup{DM}<2R_h$ is the total mass of the dark matter particles enclosed within twice the subhalo half-mass radius, and $M<2R_h$ is the total particle mass enclosed within twice the subhalo half-mass radius, originating from the center of the subhalo \cite{Jing_2019}. Analysis is carried out at different snapshot values which are translated to redshift via TNG 300-1's provided values. We employ the use and analysis of other measures ($M_\star, \textup{Position}$, etc.) using what is reported by TNG 300-1's catalog. A Dark Matter Deficient Galaxy is classified as one that meets the criteria established in \ref{Galaxy Selection Pipeline} and has $f_\textup{DM}\leq 0.5$. This is consistent with the analysis of \cite{Jing_2019} and employed throughout all trials. We also separate DMDGs between "extreme" and non-extreme DMDGs to account for the effects of tidal dwarf galaxies formed in tidal tails of interacting galaxies or poorly identified subhaloes \cite{Ploeckinger_2025}. Our criteria for non-extreme DMDGs is that $f_\textup{DM}>0.05$.  
+\begin{equation}
+f_\textup{DM} = \frac{M_\textup{DM} < 2R_h}{M_\textup{total} < 2R_h}
+\label{fDM Calculation}
+\end{equation}
+\subsection{Galaxy Selection Pipeline}
+\label{Galaxy Selection Pipeline}
+We divide our study into a replication and renewed analysis of \cite{Jing_2019} using modern methods and techniques and the scale of TNG 300-1 (Section \ref{Literature Replication and Analysis}, and a broader-scale analysis featuring different criteria for DMDGs and included galaxies (Section \ref{Broad Analysis of DMDG Subhaloes}). We feature different definitions and selection pipelines for these  sections. All selected subhaloes must contain sufficient stellar-particle resolution for detailed analysis ($N_\star \geq 500$), and be flagged by TNG's catalog as a subhalo ($\textup{SubhaloFlag = 1}$) to be considered a resolved galaxy. This criteria reduces our sample to $154,638$ resolved galaxies. 
+
+For Section \ref{Literature Replication and Analysis}, we employ the selection pipeline used in \cite{Jing_2019}. These include stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog. $f_\textup{DM}$ was calculated via \ref{fDM Calculation} for all subhaloes meeting this criteria, and subhaloes with $f_\textup{DM}<0.5$ were classified as DMDGs. Non-extreme DMDGS were DMDGS such that $f_\textup{DM}>0.05$ This reduced our resolved galaxy population to $15,595$ satellite galaxies for the literature replication. Of these $513$ were classified as DMDGs ($3.3 \%$). When excluding extreme DMDGS ($f_\textup{DM}\leq 0.05$), we are left with $400$ ($2.5\%$) non-extreme DMDGs. We notice that the original analysis of Illustris (the predecessor to TNG) from the literature includes only $1.5\%$. We acknowledge this in \ref{Discussion}.
+
+\subsection{Subhalo Behavior and Movement} \label{Subhalo Behavior and Movement}
+To understand the evolutionary histories correlated with DMDGs, we interpret merger trees provided by the TNG 300-1 catalog. Our analysis is carried out independently for specified subhalo IDs at selected snapshots. A SubFindID is assigned by TNG 300-1 and  connected to corresponding subhalos across different snapshots and merger events via the SubLink algorithm. Corresponding or shared particles are used to identify potential descendant candidates and ranked by particle binding-energy. To describe and identify the mergers experienced by a galaxy, we separate the merger branches and identify if any significant branch is found at the specific snapshot. Merger tables for analyzed halos can be found in Appendix \ref{Merger Tables}
+
+To analyze whether subhalos are affected by their environment or behavior, we record distance from the central subhalo across a range of snapshots. The TNG 300-1 catalog allows us to find the corresponding group number for specified SubfindID and identify the ID of the corresponding central galaxy. Comparing the ID allows us to easily distinguish whether the analyzed subhalo is a central or satellite galaxy. For galaxies identified at satellites, we retrieve the position measurement (provided by TNG 300-1) and calculate $\textup{distance}=|\textup{x}_\textup{satellite}-\textup{x}_\textup{central}|$, where $\textup{x}$ are three-dimensional coordinates of the center of each subhalo, and account for periodic boundary correction along coordinates within the $300 \textup{ kpc}$ box. To account for the scale of the subhalos and larger group halo, we normalize over $R_{200}$ (radius enclosing $200$ times the critical density). The corresponding value of $\frac{r}{R_{200}}$ is calculated across multiple snapshots to find the change in normalized distance between the central and satellite over time. We graph these measurements against redshift to find the overall trend. Because analysis is carried out across multiple snapshots, and processes such as infall and mergers may disrupt the satellite/central status of a subhalo, we reevaluate $\textup{x}_\textup{satellite}$ and $\textup{x}_\textup{central}$ at each snapshot. \cite{10.1111/j.1365-2966.2005.09543.x}
+
+\subsection{Machine Learning Analysis}
+\section{Literature Comparison and Extended History Analysis} 
+
+\subsection{Population of Dark-Matter-Deficient Galaxies}
+
+\subsection{Structural Properties}
+
+\subsection{Environmental Properties}
+
+\subsection{Evolutionary Histories}
+
+\subsection{Pericentric Distances}
+
+\section{Discussion}
+
+\subsection{Comparison with Previous Simulations}
+
+\subsection{Evolutionary Pathways}
+
+\subsection{Implications}
+
+\subsection{Limitations}
+
+\section{Conclusions}
+
+Your conclusions here.
+
+\acknowledgments
+
+Acknowledgments here.
+
+\software{Python, NumPy, pandas, h5py, Matplotlib}
+
+\printbibliography
+
+\end{document}
