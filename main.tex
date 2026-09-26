@@ -37,7 +37,7 @@ Your introduction here.
 The IllustrisTNG 300-1 (referred to as TNG 300-1)magnetohydrodynamical simulation is the largest physical model in the TNG series, modeling baryon-inclusive galaxy formation on a simulation scale of \(300 \textup{ Mpc}\) \cite{nelson2024introducingtngclustersimulationoverview,nelson2021illustristngsimulationspublicdata,Pillepich_2017,Weinberger_2016}. The simulation employs Planck 2015 results ($\Omega_{\Lambda, 0} = 0.6911, \Omega_{m,0}=0.3089, \Omega_{b,0}=0.0486, \sigma_8=0.8159, n_s=0.9667 $ and $h=0.6774$) and Newtonian self-gravity \cite{2016Planck}. The resolutions are $m_\textup{baryon}=7.6 \times 10^6$ and $m_\textup{DM} = 4.0 \times 10^7$. The softening length for dark matter is $\epsilon_{\textup{DM}\star}=2.0 \rightarrow 1.0$ TNG 300-1 spans 100 snapshots (from redshift $z=127$ to $z=0.0$). TNG 300-1 employs friend-of-friend (FoF) algorithim to identify halos, SUBFIND identify subhaloes, and SUBLINK to identify and construct merger trees \cite{1985ApJ...292..371D, 2001MNRAS.328..726S, Rodriguez_Gomez_2016}. The TNG catalog contains $14,485,789$ subhalos.
 \subsection{Measurements and Models}
 \label{Measurements and Models}
-We employ the fraction of dark matter mass ($f_\textup{DM}$) as a measure of dark matter deficiency. This value is calculated using the formula in Equation \eqref{fDM Calculation}, where $M_\textup{DM}<2R_h$ is the total mass of the dark matter particles enclosed within twice the subhalo half-mass radius, and $M<2R_h$ is the total particle mass enclosed within twice the subhalo half-mass radius, originating from the center of the subhalo \cite{Jing_2019}. Analysis is carried out at different snapshot values which are translated to redshift via TNG 300-1's provided values. We employ the use and analysis of other measures ($M_\star, \textup{Position}$, etc.) using what is reported by TNG 300-1's catalog. A Dark Matter Deficient Galaxy is classified as one that meets the criteria established in \ref{Galaxy Selection Pipeline} and has $f_\textup{DM}\leq 0.5$. This is consistent with the analysis of \cite{Jing_2019} and employed throughout all trials. We also separate DMDGs between "extreme" and non-extreme DMDGs to account for the effects of tidal dwarf galaxies formed in tidal tails of interacting galaxies or poorly identified subhaloes \cite{Ploeckinger_2025}. Our criteria for non-extreme DMDGs is that $f_\textup{DM}>0.05$.  
+We employ the fraction of dark matter mass ($f_\textup{DM}$) as a measure of dark matter deficiency. This value is calculated using the formula in Equation \eqref{fDM Calculation}, where $M_\textup{DM}<2R_h$ is the total mass of the dark matter particles enclosed within twice the subhalo half-mass radius, and $M<2R_h$ is the total particle mass enclosed within twice the subhalo half-mass radius, originating from the center of the subhalo \cite{Jing_2019}. Analysis is carried out at different snapshot values which are translated to redshift via TNG 300-1's provided values. We employ the use and analysis of other measures ($M_\star, \textup{Position}$, etc.) using what is reported by TNG 300-1's catalog. A Dark Matter Deficient Galaxy is classified as one that meets the criteria established in \ref{Galaxy Selection Pipeline} and has $f_\textup{DM}\leq 0.5$. This is consistent with the analysis of \cite{Jing_2019} and employed throughout all trials. We also separate DMDGs between "extreme" and non-extreme DMDGs to account for the effects of tidal dwarf galaxies formed in tidal tails of interacting galaxies or poorly identified subhaloes \cite{2018MNRAS.474..580P}. Our criteria for non-extreme DMDGs is that $f_\textup{DM}>0.05$.  
 \begin{equation}
 f_\textup{DM} = \frac{M_\textup{DM} < 2R_h}{M_\textup{total} < 2R_h}
 \label{fDM Calculation}
@@ -48,33 +48,67 @@ We divide our study into a replication and renewed analysis of \cite{Jing_2019} 
 
 For Section \ref{Literature Replication and Analysis}, we employ the selection pipeline used in \cite{Jing_2019}. These include stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog. $f_\textup{DM}$ was calculated via \ref{fDM Calculation} for all subhaloes meeting this criteria, and subhaloes with $f_\textup{DM}<0.5$ were classified as DMDGs. Non-extreme DMDGS were DMDGS such that $f_\textup{DM}>0.05$ This reduced our resolved galaxy population to $15,595$ satellite galaxies for the literature replication. Of these $513$ were classified as DMDGs ($3.3 \%$). When excluding extreme DMDGS ($f_\textup{DM}\leq 0.05$), we are left with $400$ ($2.5\%$) non-extreme DMDGs. We notice that the original analysis of Illustris (the predecessor to TNG) from the literature includes only $1.5\%$. We acknowledge this in \ref{Discussion}.
 
+To establish sample subhaloes used for environmental and merger analysis, we use a $Z-$score algorithim to derive the $5$ haloes, meeting required criteria, with the least average deviation across logarithmic $M_\star \odot$, logarithmic $M_{200},$ and $f_\textup{DM}$. We do not include extreme DMDGs in the selected catalo for this analysis. $Z-$score is calculated with Equation \ref{Z-Score} for each measure, and the deviation (total distance from median) is calculated using Equation \ref{Standardized Distance}. We extract the five galaxies with the lowest reported deviation and report them during designated analysis. When analyzing merger history and environment, we use the most representative (low deviation) galaxies in order to get a generalizable representation without high computational weight.
+\begin{equation}
+\label{Z-score}
+\box{\textup{Z-Score} = |\frac{\textup{Galaxy Value} - \textup{Median}}{\textup{Mean Absolute Deviation}}|}
+\end{equation}
+\begin{equation}
+\label{Standardized Distance}
+\textup{Deviation} = \sqrt{Z_\textup{Log Stellar Mass}^2+Z_\textup{Total Mass}^2+Z_f_\textup{DM}^2}
+\end{equation}
+
+
 \subsection{Subhalo Behavior and Movement} \label{Subhalo Behavior and Movement}
 To understand the evolutionary histories correlated with DMDGs, we interpret merger trees provided by the TNG 300-1 catalog. Our analysis is carried out independently for specified subhalo IDs at selected snapshots. A SubFindID is assigned by TNG 300-1 and  connected to corresponding subhalos across different snapshots and merger events via the SubLink algorithm. Corresponding or shared particles are used to identify potential descendant candidates and ranked by particle binding-energy. To describe and identify the mergers experienced by a galaxy, we separate the merger branches and identify if any significant branch is found at the specific snapshot. Merger tables for analyzed halos can be found in Appendix \ref{Merger Tables}
 
 To analyze whether subhalos are affected by their environment or behavior, we record distance from the central subhalo across a range of snapshots. The TNG 300-1 catalog allows us to find the corresponding group number for specified SubfindID and identify the ID of the corresponding central galaxy. Comparing the ID allows us to easily distinguish whether the analyzed subhalo is a central or satellite galaxy. For galaxies identified at satellites, we retrieve the position measurement (provided by TNG 300-1) and calculate $\textup{distance}=|\textup{x}_\textup{satellite}-\textup{x}_\textup{central}|$, where $\textup{x}$ are three-dimensional coordinates of the center of each subhalo, and account for periodic boundary correction along coordinates within the $300 \textup{ kpc}$ box. To account for the scale of the subhalos and larger group halo, we normalize over $R_{200}$ (radius enclosing $200$ times the critical density). The corresponding value of $\frac{r}{R_{200}}$ is calculated across multiple snapshots to find the change in normalized distance between the central and satellite over time. We graph these measurements against redshift to find the overall trend. Because analysis is carried out across multiple snapshots, and processes such as infall and mergers may disrupt the satellite/central status of a subhalo, we reevaluate $\textup{x}_\textup{satellite}$ and $\textup{x}_\textup{central}$ at each snapshot. \cite{10.1111/j.1365-2966.2005.09543.x} 
 
-To establish sample subhaloes used for environmental and merger analysis, we use a $Z-$score algorithim to derive the $5$ haloes, meeting required criteria, with the least average deviation across logarithmic $M_\star \odot$, logarithmic $M_{200},$ and $f_\textup{DM}$. We do not include extreme DMDGs in the selected catalo for this analysis. $Z-$score is calculated with Equation \ref{Z-Score} for each measure, and the deviation (total distance from median) is calculated using Equation \ref{Standardized Distance}. We extract the five galaxies with the lowest reported deviation and report them during designated analysis. When analyzing merger history and environment, we use the most representative (low deviation) galaxies in order to get a generalizable representation without high computational weight.
-\begin{equation}
-\label{Z-score}
-\textup{Z-Score} = |\frac{\textup{Galaxy Value} - \textup{Median}}{\textup{Mean Absolute Deviation}}|
-\end{equation}
-\begin{equation}
-\label{Standardized Distance}
-\textup{Deviation} = \sqrt{Z_\textup{Logarithmic Stellra Mass}^2+Z_\textup{Total Mass}^2+Z_\textup{Fraction of Dark Matter}^2}
-\end{equation}
 
 \subsection{Machine Learning Analysis}
-\section{Literature Comparison and Extended History Analysis} 
+\section{Literature Comparison and Extended History Analysis}  \label{Literature Comparisson and Extended History Analysis}
+\subsection{Galaxy Selection and Properties} \label{Galaxy Selection and Properties}
+We begin our analysis by attempting to reproduce experimental methodology by Jing et. al in \cite{Jing_2019} using renewed simulation data from TNG 300-1. This simulation features a larger box-size of $300 \textup{ kpc}$, advanced resolution, and updated cosmological processes. We replicate the galaxy selection pipeline and compare our results and data to that reported in the literature. We then take sample galaxies and perform environmental and merger history analysis to further understand the evolutionary pathways and behavior associated with the formation of DMDGs within hydrodynamical simulations. 
 
 \subsection{Population of Dark-Matter-Deficient Galaxies}
+We use the reported pipeline in Jing et. al to extract resolved satellite galaxies. We employ the criteria listed in \ref{Galaxy Selection Pipeline} in addition to our standard resolved galaxy selection (stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog). This provides us with a catalog of $15,595$ resolved satellite galaxies, $513$ total DMDGS. The distribution of $f_\textup{DM}$ is modeled in Figure \ref{fDM in Literature Resolved Galaxies}. The median $f_\textup{DM}$ for DMDGs is $0.380$, including extreme DMDGS. The distribution features a left skew and median above the middle of the range indicating high $f_\textup{DM}$ is more common in DMDGs. The median $f_\textup{DM}$ for all selected satellites  is $0.784$. 
 
-\subsection{Structural Properties}
+The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an abnormal spike in the lowest $f_\textup{DM}$ ($f_\textup{DM} < 0.01$). This trend is also consistent with results from Jing et al., \cite{Jing_2019}. To account for this, Jing filters their catalog group into extreme and non-extreme DMDGs, where $0.05 < f_\textup{DM} < 0.5$ for non-extreme DMDGs. We apply this cut for our DMDG catalog and re-calculate median values to be $0.420$ for non-extreme DMDGs and $0.785$. Jing references tidal stripping and displacement of central galaxies during mergers as a cause for the distribution \cite{2018MNRAS.474..580P}. We attempt to further clarify this trend in Section \ref{Merger History and Environmental Analysis}. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{fDM in Literature Resolved Galaxies.jpg}
+    \caption{$f_\textup{DM}$ distribution for all resolved subhalos following literature galaxy selection (left) and all DMDGs (right)}
+    \label{fDM in Literature Resolved Galaxies}
+\end{figure}
 
-\subsection{Environmental Properties}
-
-\subsection{Evolutionary Histories}
-
-\subsection{Pericentric Distances}
+We compare $f_\textup{DM}$ against stellar mass $M_\star$ for literature selected galaxies (Figure \ref{fDM against Stellar Mass Literature}). In the left panel (results from TNG 300-1), the majority of galaxies are clustered above $0.6$ and below $0.9 f_\textup{DM}$ and between $0.4 \times 10^{10}$ and $1 \times 10^{10}$. There is no strong correlation between the two metrics ($p=-0.143$). We note that, although a pearson correlation exists, it is likely confounded by the large volume of clustered data. The DMDG population is spread out evenly across the same mass range as non-DMDGs (right panel). We include extreme DMDGs in this analysis to see if stellar mass holds significant correlation or clustering with associated measures, but see no apparent clustering. The median values of $M_\star$ for non-extreme DMDGS, extreme DMDGS, and all galaxies from the selection are $6.08 \times 10^9 M_\star, 6.21 \times 10^9 M_\star,$ and $5.15 \times 10^9 M_\star$, respectively. These results are consistent with the results of Jing et. al.,, which displayed a similar distribution and lack of correlation \cite{Jing_2019}. The results are indicative that stellar mass is not correlated with and does not dictate status as a DMDG.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fDM against Stellar Mass Literature.jpg}
+    \caption{$f_\textup{DM}$ plotted against $M\star/M_\odot$ for full literature galaxy selection (left) and all DMDGs (right)}
+    \label{fDM against Stellar Mass Literature}
+\end{figure}
+$f_\textup{DM}$ is modeled against halo-centric distance $\frac{r}{R_{200}}$ for galaxies selected from the literature pipeline in \ref{fDM against radius}. There is a positive yet weak correlation ($r=0.171$). Extreme DMDGs are spread out along a higher range of $\frac{r}{R_{200}}$ then non-extreme DMDGs. The median $\frac{r}{R_{200c}}$ for non-extreme DMDGs is $0.094$, for extreme DMDGs is $0.520$ and for the entire galaxy selection is $0.781$. The positive correlation indicates association between near-center satellite galaxies and low $f_\textup{DM}$, which could be indicative of tidally-stripped galaxies or past centrals being becoming DMDGs. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fDM against radius.jpg}
+    \caption{$f_\textup{DM}$ plotted against $\frac{r}{R_{200}}$ for all resolved subhalos following the literature galaxy selection} 
+    \label{fDM against radius}
+\end{figure}
+\subsection{Evolutionary History and Environmental Change}
+We use the deviation $Z-$score method established in Section \ref{Galaxy Selection Pipeline} to extract five sample halos. Relevant metrics and Subhalo ID at $z=0$ are presented in \ref{Literature Sample Halo Table}. In Figure \ref{M vs r literature sample} cumulative enclosed mass profiles for total mass, stellar mass, and dark matter particle mass are shown as a function of radius. With the exception of subhalo $738558$, all subhalos show significantly higher $M_\star$ then $M_\textup{DM}$ within twice the half-stellar mass radius, indicative of tightly bound stellar mass in contrast to dispersed dark matter particles. In Figure \ref{fDM Redshift Literature Replication} we analyze the $f_\textup{DM}$ measure of each subhalo across different redshifts for three of our sample galaxies. Each subhalo exhibits slight variations in the behavior and trend of $f_\textup{DM}$, but all are characterized by frequent and dramatic changes in $f_\textup{DM}$ at low redshifts. In Table \ref{fDM redshift behavior} we indicate the redshift(s) of $f_\textup{DM} < 0.5$ and other statistics on the temporal $f_\textup{DM}$ progression of the three sample subhalos.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{M vs r literature sample.jpg}
+    \caption{Cumulative enclosed total mass (gray), stellar mass $M_\star$ (red) and dark matter $M_\textup{DM}$ (black) at increasing radius $r$ from galaxy center for $5$ representative galaxies from literature selection galaxy catalog.}
+    \label{M vs r literature sample}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1.0\linewidth]{fDM Redshift Literature Replication.jpg}
+    \caption{Progression of $f_\textup{DM}$ at different redshifts for three representative subhalos from literature selection pipeline. Subhalos $738558$, $355308$, and $617680$ at $z=0$}
+    \label{fDM Redshift Literature Replication}
+\end{figure}
 
 \section{Discussion}
 
