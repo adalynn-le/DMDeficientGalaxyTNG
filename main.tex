@@ -15,7 +15,7 @@
 Population Statistics and Evolutionary Pathways}
 
 \author{Adalynn Le}
-\affiliation{Santa Teresa High School}
+\affiliation{}
 
 \begin{abstract}
 
@@ -37,18 +37,18 @@ Your introduction here.
 The IllustrisTNG 300-1 (referred to as TNG 300-1)magnetohydrodynamical simulation is the largest-volume realization in the TNG series, modeling baryon-inclusive galaxy formation on a simulation scale of \(300 \textup{ Mpc}\) \cite{nelson2021illustristngsimulationspublicdata,Pillepich_2017,Weinberger_2016}. The simulation employs Planck 2015 results ($\Omega_{\Lambda, 0} = 0.6911, \Omega_{m,0}=0.3089, \Omega_{b,0}=0.0486, \sigma_8=0.8159, n_s=0.9667 $ and $h=0.6774$) and Newtonian self-gravity \cite{Planck2016}. The resolutions are $m_\textup{baryon}=7.6 \times 10^6$ and $m_\textup{DM} = 4.0 \times 10^7$. The softening length for dark matter is $\epsilon_{\textup{DM}\star}=2.0 \rightarrow 1.0$ TNG 300-1 spans 100 snapshots (from redshift $z=127$ to $z=0.0$). TNG 300-1 employs friend-of-friend (FoF)  algorithim to identify halos \cite{1985ApJ...292..371D}, SUBFIND identify subhaloes \cite{2001MNRAS.328..726S}, and SUBLINK to identify and construct merger trees \cite{Rodriguez_Gomez_2016, 2015MNRAS.449...49R}. The TNG catalog contains $14,485,709$ subhalos.
 \subsection{Measurements and Models}
 \label{Measurements and Models}
-We employ the fraction of dark matter mass ($f_\textup{DM}$) as a measure of dark matter deficiency. This value is calculated using the formula in Equation \eqref{fDM Calculation}, where $M_\textup{DM}<2R_h$ is the total mass of the dark matter particles enclosed within twice the subhalo half-mass radius, and $M<2R_h$ is the total particle mass enclosed within twice the subhalo half-mass radius, within a spherical aperture of radius $2R_h$ centered on the subhalo \cite{Jing_2019}. Analysis is carried out at different snapshot values which are translated to redshift via TNG 300-1's data release. We employ the use and analysis of other measures ($M_\star, \textup{Position}$, etc.) using what is reported by TNG 300-1's catalog. A Dark Matter Deficient Galaxy is classified as one that meets the criteria established in \ref{Galaxy Selection Pipeline} and has $f_\textup{DM} < 0.5$. This is consistent with the analysis of \cite{Jing_2019} and employed throughout all trials. We also separate DMDGs between "extreme" and non-extreme DMDGs to account for the potential effects of tidal dwarf galaxies formed in tidal tails of interacting galaxies or poorly identified subhaloes \cite{2018MNRAS.474..580P}. Our criteria for non-extreme DMDGs is that $f_\textup{DM}>0.05$.  
+We employ the fraction of dark matter mass ($f_\textup{DM}$) as a measure of dark matter deficiency. This value is calculated using the formula in Equation \eqref{fDM Calculation}, where $M_\textup{DM}<2R_{\textup{half}, \star}$ is the total mass of the dark matter particles enclosed within twice the subhalo half-mass radius, and $M<2R_{\textup{half}, \star}$ is the total particle mass enclosed within twice the subhalo half-mass radius, within a spherical aperture of radius $2R_{\textup{half}, \star}$ centered on the subhalo \cite{Jing_2019}. Analysis is carried out at different snapshot values which are translated to redshift via TNG 300-1's data release. We employ the use and analysis of other measures ($M_\star, \textup{Position}$, etc.) using what is reported by TNG 300-1's catalog. A DMDG is classified as one that meets the criteria established in \ref{Galaxy Selection Pipeline} and has $f_\textup{DM} < 0.5$. This is consistent with the analysis of Jing et al. \cite{Jing_2019} and employed throughout all trials. We also separate DMDGs between "extreme" and non-extreme DMDGs to account for the potential effects of tidal dwarf galaxies formed in tidal tails of interacting galaxies or poorly identified subhaloes \cite{2018MNRAS.474..580P}. Our criteria for non-extreme DMDGs is that $f_\textup{DM}>0.05$.  
 \begin{equation}
-f_\textup{DM} = \frac{M_\textup{DM} < 2R_h}{M_\textup{total} < 2R_h}
+f_\textup{DM} = \frac{M_\textup{DM} < 2R_{\textup{half}, \star}}{M_\textup{total} < 2R_{\textup{half}, \star}}
 \label{fDM Calculation}
 \end{equation}
 \subsection{Galaxy Selection Pipeline}
 \label{Galaxy Selection Pipeline}
-We divide our study into a reproduction and renewed analysis of \cite{Jing_2019} using modern methods and techniques and the scale of TNG 300-1 (Section \ref{Literature Reproduction and Analysis}, and a broader-scale analysis featuring different criteria for DMDGs and included galaxies (Section \ref{Broad Analysis of DMDG Subhaloes}). We feature different definitions and selection pipelines for these  sections. We require a stellar resolution of ($N_\star \geq 500$), and TNG catalog classification as a subhalo ($\textup{SubhaloFlag = 1}$) to be considered a resolved galaxy. This criteria reduces our sample to $154,638$ resolved galaxies. 
+We divide our study into a reproduction and renewed analysis of Jing et al. \cite{Jing_2019} using modern methods and techniques and the scale of TNG 300-1 (Section \ref{Literature Comparisson and Extended History Analysis}), and a broader-scale analysis featuring different criteria for DMDGs and included galaxies (Section \ref{Broad Analysis of DMDG Subhaloes}). We feature different definitions and selection pipelines for these  sections. We require a stellar resolution of ($N_\star \geq 500$), and TNG catalog classification as a subhalo ($\textup{SubhaloFlag = 1}$) to be considered a resolved galaxy. This criteria reduces our sample to $154,638$ resolved galaxies. 
 
-For Section \ref{Literature Reproduction and Analysis}, we employ the selection pipeline used in \cite{Jing_2019}. These include stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog. $f_\textup{DM}$ was calculated via \ref{fDM Calculation} for all subhaloes meeting this criteria, and subhaloes with $f_\textup{DM}<0.5$ were classified as DMDGs. Non-extreme DMDGS were DMDGS such that $f_\textup{DM}\geq0.05$ This reduced our resolved galaxy population to $15,595$ satellite galaxies for the literature reproduction. Of these $513$ were classified as DMDGs ($3.3 \%$). When excluding extreme DMDGS ($f_\textup{DM}\leq 0.05$), we are left with $400$ ($2.5\%$) non-extreme DMDGs. We notice that the original analysis of Illustris (the predecessor to TNG) from the literature includes only $1.5\%$. We acknowledge this in \ref{Discussion}.
+For Section \ref{Literature Comparisson and Extended History Analysis}, we employ the selection pipeline used in Jing et al. (stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog) \cite{Jing_2019} . $f_\textup{DM}$ was calculated via Equation \ref{fDM Calculation} for all subhaloes meeting this criteria, and subhaloes with $f_\textup{DM}<0.5$ were classified as DMDGs. Non-extreme DMDGS were DMDGS such that $f_\textup{DM}\geq0.05$ This reduced our resolved galaxy population to $15,595$ satellite galaxies for the literature reproduction. Of these $513$ were classified as DMDGs ($3.3 \%$). When excluding extreme DMDGS ($f_\textup{DM}\leq 0.05$), we are left with $400$ ($2.5\%$) non-extreme DMDGs. We notice that the original analysis of Illustris (the predecessor to TNG) from the literature includes only $1.5\%$. We acknowledge this in \ref{Literature Discussion}.
 
-To establish sample subhaloes used for environmental and merger analysis, we use a $Z-$score algorithim to derive the $5$ haloes, meeting required criteria, with the least average deviation across logarithmic $M_\star \odot$, logarithmic $M_{200},$ and $f_\textup{DM}$. We do not include extreme DMDGs in the selected catalo for this analysis. $Z-$score is calculated with Equation \ref{Z-Score} for each measure, and the deviation (total distance from median) is calculated using Equation \ref{Standardized Distance}. We extract the five galaxies with the lowest reported deviation and report them during designated analysis. When analyzing merger history and environment, we use representative (low deviation) galaxies in order to get a representation without high computational weight. These five galaxies are not enough to create a full generalizable study of all DMDGs, but may provide us with relevant reference information and statistics.
+To establish sample subhaloes used for environmental and merger analysis, we use a $Z-$score algorithm to derive the $5$ subhalos, meeting required criteria, with the least average deviation across logarithmic $M_\star \odot$, logarithmic $M_{200},$ and $f_\textup{DM}$. We do not include extreme DMDGs in the selected catalo for this analysis. $Z-$score is calculated with Equation \ref{Z-score} for each measure, and the deviation (total distance from median) is calculated using Equation \ref{Standardized Distance}. We extract the five galaxies with the lowest reported deviation and report them during designated analysis. When analyzing merger history and environment, we use representative (low deviation) galaxies in order to get a representation without high computational weight. These five galaxies are not enough to create a full generalizable study of all DMDGs, but may provide us with relevant reference information and statistics.
 \begin{equation}
 \label{Z-score}
 \box{\textup{Z-Score} = |\frac{\textup{Galaxy Value} - \textup{Median}}{\textup{Mean Absolute Deviation}}|}
@@ -60,20 +60,28 @@ To establish sample subhaloes used for environmental and merger analysis, we use
 
 
 \subsection{Subhalo Behavior and Movement} \label{Subhalo Behavior and Movement}
-To understand the evolutionary histories correlated with DMDGs, we interpret merger trees provided by the TNG 300-1 catalog. Our analysis is carried out independently for specified subhalo IDs at selected snapshots. A SubFindID is assigned by TNG 300-1 and connected to corresponding subhalos across different snapshots and merger events via the SubLink algorithm. Corresponding or shared particles are used to identify potential descendant candidates and ranked by particle binding-energy. To describe and identify the mergers experienced by a galaxy, we separate the merger branches and identify if any significant branch is found at the specific snapshot. Merger tables for analyzed halos can be found in Appendix \ref{Merger Tables}
+To understand the evolutionary histories correlated with DMDGs, we interpret merger trees provided by the TNG 300-1 catalog. Our analysis is carried out independently for specified subhalo IDs at selected snapshots. A SubFindID is assigned by TNG 300-1 and connected to corresponding subhalos across different snapshots and merger events via the SubLink algorithm. Corresponding or shared particles are used to identify potential descendant candidates and ranked by particle binding-energy. To describe and identify the mergers experienced by a galaxy, we separate the merger branches and identify if any significant branch is found at the specific snapshot. 
 
 To analyze whether subhalos are affected by their environment or behavior, we record distance from the central subhalo across a range of snapshots. The TNG 300-1 catalog allows us to find the corresponding group number for specified SubfindID and identify the ID of the corresponding central galaxy. Comparing the ID allows us to easily distinguish whether the analyzed subhalo is a central or satellite galaxy. For galaxies identified at satellites, we retrieve the position measurement (provided by TNG 300-1) and calculate $r=|\textup{x}_\textup{satellite}-\textup{x}_\textup{central}|$, where $\textup{x}$ are three-dimensional coordinates of the center of each subhalo ($(x,y,z)$), and account for periodic boundary correction along coordinates within the $300 \textup{ Mpc}$ box. To account for the scale of the subhalos and larger group halo, we normalize over $R_{200}$ (radius enclosing mean density $200$ times the universal critical density). The corresponding value of $\frac{r}{R_{200}}$ is calculated across multiple snapshots to find the change in normalized distance between the central and satellite over time. We graph these measurements against redshift to find the overall trend. Because analysis is carried out across multiple snapshots, and processes such as infall and mergers may disrupt the satellite/central status of a subhalo, we reevaluate $\textup{x}_\textup{satellite}$ and $\textup{x}_\textup{central}$ at each snapshot. \cite{10.1111/j.1365-2966.2005.09543.x} 
 
 
-\subsection{Machine Learning Analysis}
+\subsection{Machine Learning Analysis Methodology} \label{Machine Learning Analysis Methodology}
+To analyze predictive feature importance and accuracy of different halo metrics on $f_\textup{DM}$, we employ Random Forest (RF) Regression and Classifying algorithm for our given subhalo groups \cite{sciKitLearn}. We analyze accuracy using $R^2$ metrics, given by Equation \ref{R Squared}, where $y_i$ is the actual target value (of $f_\textup{DM}$), $\hat{y}_i$ is the predicted value, and $\overline{y}$ is the mean of the target values within the dataset. We use $3$ "control" galaxies for each non-extreme DMDG. Control galaxies are found using a scalar fit function \cite{scikit-learn} using logarithmic stellar mass $M_\star$ and logarithmic halo mass $M_{200}/M_\odot$. We employ a test set of $20\%$, a random seed of $42$, $500$ estimators with a minimum split sample of $2$, and a minimum leaf sample of $1$. 
+\begin{equation}
+\label{R Squared}
+R^2=1-\frac{\sum_{i=1}^n (y_i-\hat{y}_i)^2}{\sum_{i=1}^n(y_i-\overline{y}_i)^2}
+\end{equation}
+
+For RF classification, we use the same $1:3$ DMDG to control sample to classify between DMDG and non-DMDG. We employ the same tree parameters (test set of $20\%$, a random seed of $42$, $500$ estimators with a minimum split sample of $2$, and a minimum leaf sample of $1$) and a balanced class weight. To deepen our feature analysis, we employ SHapley Additive exPlanations (SHAP) \cite{DBLP:journals/corr/LundbergL17} for the given features. 
+
 \section{Literature Comparison and Extended History Analysis}  \label{Literature Comparisson and Extended History Analysis}
 \subsection{Galaxy Selection and Properties} \label{Galaxy Selection and Properties}
 We begin our analysis by attempting to reproduce simulation methodology by Jing et. al in \cite{Jing_2019} using renewed simulation data from TNG 300-1. This simulation features a larger box-size of $300 \textup{ Mpc}$, advanced resolution, and updated cosmological processes. We reproduce the galaxy selection pipeline and compare our results and data to that reported in the literature. We then take sample galaxies and perform environmental and merger history analysis to further understand the evolutionary pathways and behavior associated with the formation of DMDGs within hydrodynamical simulations. 
 
 \subsection{Population of Dark-Matter-Deficient Galaxies}
-We use the reported pipeline in Jing et. al to extract resolved satellite galaxies. We employ the criteria listed in \ref{Galaxy Selection Pipeline} in addition to our standard resolved galaxy selection (stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog). This provides us with a catalog of $15,595$ resolved satellite galaxies, $513$ total DMDGS. The distribution of $f_\textup{DM}$ is modeled in Figure \ref{fDM in Literature Resolved Galaxies}. The median $f_\textup{DM}$ for DMDGs is $0.380$, including extreme DMDGS. The distribution features a left skew and median above the middle of the range indicating high $f_\textup{DM}$ is more common in DMDGs. The median $f_\textup{DM}$ for all selected satellites  is $0.784$. 
+We use the reported pipeline in Jing et. al to extract resolved satellite galaxies. We employ the criteria listed in \ref{Galaxy Selection Pipeline} in addition to our standard resolved galaxy selection (stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog). This provides us with a catalog of $15,595$ resolved satellite galaxies, $513$ total DMDGS. The distribution of $f_\textup{DM}$ is modeled in Figure \ref{fDM in Literature Resolved Galaxies}. The median $f_\textup{DM}$ for DMDGs is $0.380$, including extreme DMDGS. The distribution features a left skew and median above the middle of the range indicating high $f_\textup{DM}$ is more common in DMDGs. The median $f_\textup{DM}$ for all selected satellites  is $0.784$. Furthermore, the median $R_{\textup{half}, \star}$ is significantly lower in DMDGs ($1.257$) than in the whole population ($2.966$),
 
-The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an abnormal spike in the lowest $f_\textup{DM}$ ($f_\textup{DM} < 0.01$). This trend is also consistent with results from Jing et al., \cite{Jing_2019}. To account for this, Jing filters their catalog group into extreme and non-extreme DMDGs, where $0.05 < f_\textup{DM} < 0.5$ for non-extreme DMDGs. We apply this cut for our DMDG catalog and re-calculate median values to be $0.420$ for non-extreme DMDGs and $0.785$. Jing references tidal stripping and displacement of central galaxies during mergers as a likely cause for the distribution \cite{2018MNRAS.474..580P}. We attempt to further clarify this trend in Section \ref{Merger History and Environmental Analysis}. 
+The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an abnormal spike in the lowest $f_\textup{DM}$ ($f_\textup{DM} < 0.01$). This trend is also consistent with results from Jing et al., \cite{Jing_2019}. To account for this, Jing filters their catalog group into extreme and non-extreme DMDGs, where $0.05 \leq f_\textup{DM} < 0.5$ for non-extreme DMDGs. We apply this cut for our DMDG catalog and re-calculate median values to be $0.420$ for non-extreme DMDGs and $0.785$. Jing references tidal stripping and displacement of central galaxies during mergers as a likely cause for the distribution \cite{2018MNRAS.474..580P}. We attempt to further clarify this trend in Section \ref{Merger History and Environmental Analysis}. 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{fDM in Literature Resolved Galaxies.jpg}
@@ -81,22 +89,64 @@ The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an 
     \label{fDM in Literature Resolved Galaxies}
 \end{figure}
 
-We compare $f_\textup{DM}$ against stellar mass $M_\star$ for literature selected galaxies (Figure \ref{fDM against Stellar Mass Literature}). In the left panel (results from TNG 300-1), the majority of galaxies are clustered above $0.6$ and below $0.9 f_\textup{DM}$ and between $0.4 \times 10^{10}$ and $1 \times 10^{10}$. There is no strong correlation between the two metrics ($r=-0.143$). We note that, although a Pearson correlation coefficient exists, it is likely confounded by the large volume of clustered data. The DMDG population is spread out evenly across the same mass range as non-DMDGs (right panel). We include extreme DMDGs in this analysis to see if stellar mass holds significant correlation or clustering with associated measures, but see no apparent clustering. The median values of $M_\star$ for non-extreme DMDGS, extreme DMDGS, and all galaxies from the selection are $6.08 \times 10^9 M_\star, 6.21 \times 10^9 M_\star,$ and $5.15 \times 10^9 M_\star$, respectively. These results are consistent with the results of Jing et. al.,, which displayed a similar distribution and lack of correlation \cite{Jing_2019}. The results are indicative that stellar mass is not correlated with and does not dictate status as a DMDG.
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{fDM against Stellar Mass Literature.jpg}
-    \caption{$f_\textup{DM}$ plotted against $M\star/M_\odot$ for full literature galaxy selection (left) and all DMDGs (right)}
-    \label{fDM against Stellar Mass Literature}
-\end{figure}
-$f_\textup{DM}$ is modeled against halo-centric distance $\frac{r}{R_{200}}$ for galaxies selected from the literature pipeline in \ref{fDM against radius}. There is a positive yet weak correlation ($r=0.171$). Extreme DMDGs are spread out along a higher range of $\frac{r}{R_{200}}$ then non-extreme DMDGs. The median $\frac{r}{R_{200c}}$ for non-extreme DMDGs is $0.094$, for extreme DMDGs is $0.520$ and for the entire galaxy selection is $0.781$. The positive Pearson correlation coefficient indicates association between near-center satellite galaxies and low $f_\textup{DM}$, which could be supporting evidence  of tidally-stripped galaxies becoming DMDGs, although further analysis is nescessary to distinguish tidal processes from other contending pathways. This trend is not nescessarily applicable for extreme DMDGs, which have a higher median $\frac{r}{R_{200c}}$ then the non-extreme sample. This may be evidence that a separate formation process may affect the prescence of these bodies.
+$f_\textup{DM}$ is modeled against halo-centric distance $\frac{r}{R_{200}}$ for galaxies selected from the literature pipeline in \ref{fDM against radius}. There is a positive yet weak correlation ($r=0.171$). Extreme DMDGs are spread out along a higher range of $\frac{r}{R_{200}}$ then non-extreme DMDGs. The median $\frac{r}{R_{200c}}$ for non-extreme DMDGs is $0.094$, for extreme DMDGs is $0.520$ and for the entire galaxy selection is $0.781$. The positive Pearson correlation coefficient indicates association between near-center satellite galaxies and low $f_\textup{DM}$, which could be supporting evidence  of tidally-stripped galaxies becoming DMDGs, although further analysis is necessary to distinguish tidal processes from other contending pathways. This trend is not nescessarily applicable for extreme DMDGs, which have a higher median $\frac{r}{R_{200c}}$ then the non-extreme sample. This may be evidence that a separate formation process may affect the prescence of these bodies.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fDM against radius.jpg}
     \caption{$f_\textup{DM}$ plotted against $\frac{r}{R_{200}}$ for all resolved subhalos following the literature galaxy selection} 
     \label{fDM against radius}
 \end{figure}
-\subsection{Evolutionary History and Environmental Change}
-We use the deviation $Z-$score method established in Section \ref{Galaxy Selection Pipeline} to extract five sample halos. Relevant metrics and Subhalo ID at $z=0$ are presented in \ref{Literature Sample Halo Table}. In Figure \ref{M vs r literature sample} cumulative enclosed mass profiles for total mass, stellar mass, and dark matter particle mass are shown as a function of radius. With the exception of subhalo $738558$, all subhalos show significantly higher $M_\star$ then $M_\textup{DM}$ within twice the half-stellar mass radius. In Figure \ref{fDM Redshift Literature Reproduction} we analyze the $f_\textup{DM}$ measure of each subhalo across different redshifts for three of our sample galaxies. Each subhalo exhibits slight variations in the behavior and trend of $f_\textup{DM}$, but all are characterized by frequent and dramatic changes in $f_\textup{DM}$ at low redshifts. Although we use representative sample galaxies, we acknowledge that we do not have sufficient data to create a substantial or generalizable conjecture for all DMDGs. In Table \ref{fDM redshift behavior} we indicate the redshift(s) of $f_\textup{DM} < 0.5$ and other statistics on the temporal $f_\textup{DM}$ progression of the three sample subhalos.
+\subsection{Evolutionary History and Environmental Change}\label{Merger History and Environmental Analysis}
+We use the deviation $Z-$score method established in Section \ref{Galaxy Selection Pipeline} to extract five sample halos. Relevant metrics and Subhalo ID at $z=0$ are presented in Table \ref{Literature Sample Halo Table}. In Figure \ref{M vs r literature sample} cumulative enclosed mass profiles for total mass, stellar mass, and dark matter particle mass are shown as a function of radius. With the exception of subhalo $738558$, all subhalos show significantly higher $M_\star$ then $M_\textup{DM}$ within twice the half-stellar mass radius. In Figure \ref{fDM Redshift Literature Replication} we analyze the $f_\textup{DM}$ measure of each subhalo across different redshifts for three of our sample galaxies. Each subhalo exhibits slight variations in the behavior and trend of $f_\textup{DM}$, but all are characterized by frequent and dramatic changes in $f_\textup{DM}$ at low redshifts. Although we use representative sample galaxies, we acknowledge that we do not have sufficient data to create a substantial or generalizable conjecture for all DMDGs. In Table \ref{fDM redshift behavior} we indicate the redshift(s) of $f_\textup{DM} < 0.5$ and other statistics on the temporal $f_\textup{DM}$ progression of the three sample subhalos.
+\begin{table}[ht]
+\centering
+\caption{Properties of the five representative dark-matter-deficient galaxies (DMDGs) selected for detailed evolutionary analysis. $M_{\rm star}$ is the total stellar mass, $M_{\rm total,2R_{\textup{half}, \star}}$ is the total mass enclosed within twice the stellar half-mass radius, $f_{\rm DM}$ is the dark-matter fraction within $2R_{\textup{half}, \star}$, $R_{\textup{half}, \star}$ is the stellar half-mass radius, and $d_{\rm total}$ is the normalized halo-centric distance.}
+\label{Literature Sample Halo Table}
+\begin{tabular}{c c r r c c c}
+\hline
+\textbf{Subhalo ID} & \textbf{Group ID} & 
+\boldmath{$M_{\rm star}$} & 
+\boldmath{$M_{\rm total,2R_{\textup{half}, \star}}$} & 
+\boldmath{$f_{\rm DM}$} & 
+\boldmath{$R_{\textup{half}, \star}$} & 
+ & & \boldmath{($M_\odot$)} & \boldmath{($M_\odot$)} & & 
+\boldmath{(kpc)} & \\
+\hline
+738558  & 1159  & $2.589\times10^{9}$ & $2.722\times10^{8}$ & 0.381 & 0.685 \\
+355308  & 229   & $2.492\times10^{9}$ & $2.446\times10^{8}$ & 0.374 & 1.563 \\
+617680  & 750   & $2.662\times10^{9}$ & $2.547\times10^{8}$ & 0.375 & 0.774 \\
+1436856 & 10494 & $2.075\times10^{9}$ & $3.062\times10^{8}$ & 0.377 & 0.667\\
+340851  & 211   & $2.726\times10^{9}$ & $2.705\times10^{8}$ & 0.383 & 1.231 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[ht]
+\centering
+\caption{DMDG threshold crossings for the case-study galaxies. 
+Crossings are identified when $f_{\rm DM}$ passes within 0.01 of the
+DMDG threshold, $f_{\rm DM}=0.5$. The final $f_{\rm DM}$ is the value at $z=0$.}
+\label{fDM redshift behavior}
+\begin{tabular}{c c c c}
+\hline
+\textbf{Subhalo ID} & \textbf{Crossing redshift} & 
+\textbf{$f_{\rm DM}$ at crossing} & \textbf{$f_{\rm DM}(z=0)$} \\
+\hline
+738558 & 0.817 & 0.497 & 0.381 \\
+       & 0.791 & 0.493 &       \\
+       & 0.226 & 0.496 &       \\
+       & 0.197 & 0.492 &       \\
+\hline
+355308 & 0.951 & 0.495 & 0.374 \\
+       & 0.923 & 0.507 &       \\
+       & 0.700 & 0.502 &       \\
+       & 0.676 & 0.504 &       \\
+       & 0.503 & 0.504 &       \\
+       & 0.482 & 0.491 &       \\
+\hline
+617680 & 0.546 & 0.502 & 0.375 \\
+\hline
+\end{tabular}
+\end{table}
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{M vs r literature sample.jpg}
@@ -106,24 +156,283 @@ We use the deviation $Z-$score method established in Section \ref{Galaxy Selecti
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{fDM Redshift Literature Replication.jpg}
-    \caption{Progression of $f_\textup{DM}$ at different redshifts for three representative subhalos from literature selection pipeline. Subhalos $738558$, $355308$, and $617680$ at $z=0$}
+    \caption{Progression of $f_\textup{DM}$ at different redshifts for three representative subhalos from literature selection pipeline. Subhalos $738558$, $355308$, and $617680$ at $z=0$ (top row and bottom left corner). Distance from central at different snapshots calculated as three dimensional Euclidean separation for Subhalo $738558$ (bottom right)}
     \label{fDM Redshift Literature Replication}
 \end{figure}
 
-\section{Discussion}
+For our reported "most representative" subhalo, $738558$, we analyze the behavior at the snapshot of largest drops in $f_\textup{DM}$. The snapshots and details in large $f_\textup{DM}$ drops are given by Table \ref{fDM drops info}. At each drop, we analyze the merger history for the quantity and extent of mergers in nearby snapshots, and the movement of the subhalo towards or away from its central, if applicable. We limit our analysis to one representative halo for computational ease. However, we understand that the sample size is not enough to produce a concrete generalizable result and rather provides data on a singular subhalo. We begin by extracting the most significant drops in $f_\textup{DM}$ and their specified snapshot. We use snapshot to easily index and correspond to TNG 300-1's catalog. 
+\begin{table*}[t]
+\centering
+\caption{Significant drops in $f_\textup{DM}$ for subhalo $738558$ at different snapshots}
+\label{fDM drops info}
+\small
+\begin{tabular}{rrrrrrrrr}
+\toprule
+Snapshot & Redshift & Subhalo ID & $f_{\mathrm{DM}}$ &
+$\Delta f_{\mathrm{DM}}$ &
+$\Delta M_{\mathrm{DM}}/M_{\mathrm{DM}}$ &
+$\Delta M_{\mathrm{star}}/M_{\mathrm{star}}$ &
+$\Delta M_{\mathrm{gas}}/M_{\mathrm{gas}}$ &
+$R_{\mathrm{half}}$ \\
+\midrule
+21 & 4.007945 & 200000007700042711 & 0.705211 & -0.155468 & 0.209424 & -0.045365 & 0.577611 & 33.063072 \\
+66 & 0.524566 & 200000007700042667 & 0.367760 & -0.134259 & 0.086957 & 0.256754 & 1.528639 & 3.373652 \\
+33 & 2.002028 & 200000007700042700 & 0.630785 & -0.085812 & -0.190601 & 0.431645 & -0.132353 & 41.084179 \\
+38 & 1.604235 & 200000007700042695 & 0.702125 & -0.083050 & -0.966102 & -0.594983 & -0.966075 & 6.700579 \\
+30 & 2.316111 & 200000007700042703 & 0.793359 & -0.076598 & 0.527372 & 1.666852 & 0.547487 & 42.446957 \\
+35 & 1.822689 & 200000007700042698 & 0.665342 & -0.075866 & 0.208589 & 0.713916 & 0.038446 & 42.137379 \\
+41 & 1.414098 & 200000007700042692 & 0.731113 & -0.061913 & -0.265035 & 0.068612 & -0.296613 & 28.697849 \\
+46 & 1.154603 & 200000007700042687 & 0.635002 & -0.060790 & -0.349931 & -0.035547 & -0.228483 & 11.257576 \\
+94 & 0.058507 & 200000007700042639 & 0.346854 & -0.060132 & -0.181818 & -0.180712 & -- & 1.285183 \\
+62 & 0.621429 & 200000007700042671 & 0.538383 & -0.054576 & -0.029046 & 0.070478 & 0.561990 & 5.444918 \\
+\bottomrule
+\end{tabular}
+\end{table*}
+We analyze snapshots $21$, $66$ and $30$ which have characteristics that compare well to the other $f_\textup{DM}$ drops within the database. We also analyze Snapshot $85$, which is approximately where Subhalo $738558$ transitions to a DMDG classification ($z=0.18$). Noticeably, for snapshots surrounding $21$, $66$, and $30$, as well as those exact snapshots, the subhalo had not yet been classified as a satellite galaxy. The subhalo transitions to a satellite classification at Snapshot $80$. During this time, it moves away from its central galaxy (Figure \ref{fDM Redshift Literature Replication}).
 
-\subsection{Comparison with Previous Simulations}
+Snapshots $21$ and $30$ both show mergers, albeit minor ones, in their surrounding snapshots. Snapshot $66$ displays no mergers at all (Appendix \ref{app: Merger History}). Due to the small extent, it is difficult to make conclusions on the role of mergers on the change in $f_\textup{DM}$ 
+\subsection{Machine Learning Results} \label{Machine Learning Results}
+We study predictive ability and feature importance on $f_\textup{DM}$ using RF Regression and Classification. We employ a full set of $15,482$ subhalos ($400$ non-extreme DMDGs and $15,082$ controls) separated into test ($20\%$) and training ($80\%$) using the RF Regression settings established in Section \ref{Machine Learning Analysis}. We use $f_\textup{DM}$ as our target and logarithmic stellar mass $\log M_\star/M_\odot$, logarithmic halo mass $\log M_{200c}/M_\odot$, normalized distance to central $\frac{r}{R_{200c}}$, gas fraction $\frac{M_\textup{gas}}{M_\star + M_\textup{gas}}$, Stellar Formation Rate, and maximum velocity as features. For our predictive regression, we calculate overall predictive accuracy using $R^2=0.484$ and demonstrate feature importance in Table \ref{feature importance rf}. This value may be swayed by the sample size and overwhelming quantity of non-DMDG in comparison to DMDGs. To account for this and analyze further, we find the average and median residuals for DMDG and non-DMDGs, shown in Table \ref{average residual}. Noticeably, the residual for DMDGs is significant and demonstrates low general accuracy compared to non-DMDGs. We thus shift our focus to the feature importance given in Figure  \ref{feature importance rf}. $\frac{r}{R_{200c}}$ has the highest given importance of $0.425$. The directionality and direct impact of this problem are not immediately obvious, but the correlation may be consistent with Figure \ref{fDM against radius}. 
 
-\subsection{Evolutionary Pathways}
 
-\subsection{Implications}
 
-\subsection{Limitations}
 
+\begin{table}[ht]
+\centering
+\caption{Feature importance values from the Random Forest classifier used to predict whether a galaxy is a dark-matter-deficient galaxy (DMDG). The importance values represent the relative contribution of each feature to the model's predictions.}
+\label{feature importance rf}
+\begin{tabular}{lc}
+\hline
+\textbf{Feature} & \textbf{Random Forest Importance} \\
+\hline
+$r/R_{200c}$ & 0.425234 \\
+$V_{\max}$ & 0.179539 \\
+$\log M_{\star}$ & 0.178065 \\
+$\log M_{\mathrm{host}}$ & 0.110376 \\
+$\mathrm{SFR}$ & 0.074407 \\
+$f_{\mathrm{gas}}$ & 0.032380 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{table}[ht]
+\centering
+\caption{Mean and median residuals of the Random Forest model for DMDG and non-DMDG galaxies. Residuals are defined as the difference between the observed and predicted $f_{\mathrm{DM}}$ values.}
+\label{average residual}
+\begin{tabular}{lcc}
+\hline
+\textbf{Galaxy Type} & \textbf{Mean Residual} & \textbf{Median Residual} \\
+\hline
+DMDG & $-0.182356$ & $-0.176582$ \\
+Non-DMDG & $0.006306$ & $0.009157$ \\
+\hline
+\end{tabular}
+\end{table}
+We study binary classification of DMDG versus non-DMDG using RF Classification. We employ the same sample size and group as the regressor with equivalent settings and balanced classification settings. In addition to calculating the $R^2$ and feature importance, we employ SHAP to find directional and correlative feature importance. Preliminary results from RF Classification are given by Table \ref{rf classification}.  Similar to regression, $R^2$ predictive accuracy was substantially better for non-DMDGs with precision of $0.98$ and recall of $0.99$ in comparisson to $0.44$ and $0.3$ for non-DMDGs, respectively.
+
+The confusion matrix displays that only $24$ of $80$ DMDGs were correctly identified, with the remaining $56$ being classified as non-DMDGs. The low DMDG recall can be attributed to the class imbalance in the data set. Overall accuracy alone does not adequately characterize classifier performance. The ROC-AUC and PR-AUC provide additional measures of the model's ability to distinguish the minority DMDG population.
+
+\begin{table}[ht]
+\centering
+\caption{Performance of the Random Forest classifier in distinguishing dark-matter-deficient galaxies (DMDGs) from non-DMDGs. Precision, recall, and F1-score are reported for each class, along with the number of objects in the test set (support).}
+\label{rf classification}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \\
+\hline
+Non-DMDG & 0.98 & 0.99 & 0.99 & 3017 \\
+DMDG & 0.44 & 0.30 & 0.36 & 80 \\
+\hline
+\textbf{Accuracy} & & & \textbf{0.97} & 3097 \\
+\textbf{Macro average} & 0.71 & 0.64 & 0.67 & 3097 \\
+\textbf{Weighted average} & 0.97 & 0.97 & 0.97 & 3097 \\
+\hline
+\end{tabular}
+\begin{tabular}{lc}
+\hline
+\textbf{Metric} & \textbf{Value} \\
+\hline
+ROC-AUC & 0.9091 \\
+PR-AUC & 0.3397 \\
+\hline
+\end{tabular}
+\begin{tabular}{lcc}
+\hline
+ & \textbf{Predict. non-DMDG} & \textbf{Predict. DMDG} \\
+\hline
+\textbf{Actual non-DMDG} & 2986 & 31 \\
+\textbf{Actual DMDG} & 56 & 24 \\
+\hline
+\end{tabular}
+\end{table}
+
+To evaluate the distinct feature importance and weighting, we perform SHAP and produce a corresponding beeswarm plot (Figure \ref{shap beeswarm}). We take some of the most noteworthy results from the SHAP beeswarm. $\frac{r}{R_{200c}}$ demonstrates a high cluster of high feature value (red) data points centered around $-0.2$ indicating high distance from central decreases predictive likelihood of being a DMDG by about $0.2$. This is consistent with the Pearson correlation of $r=0.17$ in Figure \ref{fDM against radius}. Low feature values for $\frac{r}{R_{200c}}$ are spread out, and thus difficult to dedicate a distinct measure to. Although they are clustered around $-0.4$, there is also a long range of low feature values on high positive importance. Gas fraction shows high feature values with negative importance and low feature values with higher importance. T With the exception of SFR, the majority of SHAP features are clustered with high feature importance in the negative direction, despite being at differing levels and intensity. Gas fraction, maximum velocity, and $\frac{r}{R_{200c}}$ have the most direct negative effect on non-DMDG status. Noticeably, $\frac{r}{R_{200c}}$ also has the most diverse range of values.
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{shap beeswarm.jpg}
+    \caption{Beeswarm feature importance for SHAP analysis of $15,482$ subhalos ($400$ DMDG and $15,082$ control) from literature selection pipeline. Blue indicates a low feature value whereas red indicates high feature value.}
+    \label{shap beeswarm}
+\end{figure}
+\subsection{Discussion} \label{Literature Discussion}
+In Jing et al., the primary formation process associated with DMDGs is expected to be tidal stripping as a result of colliding halos decentralizing the central subhalo and displacing baryonic mass from dark matter. Tidal stripping is a motivating opportunity because it provides a direct pathway without altering $\Lambda \textup{CDM}$ cosmology. Tidal stripping occurs due to frequent mergers between dark matter halos, accounted for in the $\Lambda \textup{CDM}$, and is consistent with gravitational processes. Although it is not the only possible candidate for DMDGs, it allows us to explain the presence of such objects without significantly altering cosmological models. DMDGs on their own oppose the ratios of dark matter and baryonic mass from the $\Lambda \textup{CDM}$. However, as galaxies are relatively small celestial bodies, and DMDGs account for only a small percent of all subhalos within our simulation, it is likely that these results are offset by the vast amount of non-DMDG structures within the universe.
+
+Our results are consistent with, but do not prove, tidal stripping as a possible explanation for DMDGs both in hydrodynamical simulations and what is observed from observational cosmology. Figure \ref{fDM against radius} demonstrates a general trend that satellite galaxies located closer to their centrals (lower $\frac{r}{R_{200c}}$) were measured to have lower average $f_\textup{DM}$. Such galaxies are consistent with tidally stripped galaxies that had only been recently removed from the center of their host halo. This correlation is further supported by our SHAP analysis, which indicates roughly $-0.2$ predictive value for high $\frac{r}{R_{200c}}$, indicating that higher distance from central decreased the likelihood of classification as a DMDG. 
+
+Our individualized analysis of subhalo $738558$ displayed frequent mergers are redshifts surrounding extreme drops in $f_\textup{DM}$ despite the subhalo retaining its central status at such points. Colliding halos could still provide similar mechanics to tidal stripping even in the absence of displacement from the center of the subhalo. It is possible tha strong gravitational force from colliding galaxies can strip loosely bound dark matter while leaving tightly clustered baryonic and stellar mass. Figure \ref{M vs r literature sample} demonstrates such an example, with stellar mass being more abundant in the more dense and difficult to strip interior of subhalos. 
+
+A notable result from the individual analysis is that Subhalo $738558$ only became classified as a satellite at snapshot $80$ ($z=0.26$), slightly before its final shift from non-DMDG to DMDG at snapshot $85$ ($z=0.18$). Because we were only able to perform a full case study on one subhalo, it is unclear whether this trend will remain true for all DMDG satellites or whether being a satellite directly influences its status as a DMDG. We perform further analysis on the possibility for DMDG centrals in Section \ref{placeholder}. However, it is noteworthy that displacement from central to satellite galaxy typically occurs after a significant merger between halos redefining the central subhalo as the central subhalo from the colliding halo. This mechanism also allows for tidal stripping as gravity pulls the former central away from the center of the newly formed halo. 
+
+There are a few limitations and inconsistencies with our data. First is that subhalo $738558$ experiences very low degree mergers throughout its history and none at snapshot $66$ or $80$. Tidal stripping is driven by processes like mergers, so it is unclear why there appears to be a lack of major mergers. This could be attributed to branches from the main progenitor or additional mergers unaccounted for by our SubLink algorithim, but it does propose evidence against tidal stripping. We also acknowledge that our DMDG percentile ($2.5\%$) is substantially larger than that of Jing et al. ($1.5\%$) We employ all of the same subhalo criteria and attribute this difference primarily to differences within the simulation test suites. However, this difference is indicative that our results are not direct replicas of theirs and present altered statistics and data as a result of differing simulation size and conditions. 
+
+\section{Central Galaxy Analysis} \label{Central Galaxy Analysis}
+To further understand the presence and formation of DMDGs in TNG 300-1, we seek to discover whether central galaxies can be considered DMDGs and whether they differ in evolutionary process or characteristics to the satellites and selected pipeline found in Jing et al. \cite{Jing_2019}. We use the same resolved subhalo pipeline as in Section \ref{Galaxy Selection Pipeline} ($N_\star \geq 500$ and  TNG 300-1 Subhalo Flag of 1). To analyze the entire central population, we apply no other mass cuts or other criteria except a necessary classification as a central by TNG 300-1. We employ the same criteria for DMDGs and non-extreme DMDGs ($f_\textup{DM} <0.5$, $f_\textup{DM} \geq 0.05$).
+
+The original selection pipeline (all resolved galaxies) finds $154,638$ suitable subhalos. Of these $93,039$ are classified as centrals and $96$ are DMDGs ($0.103\%$). There are no extreme DMDGs. Our DMDG population show significantly higher values of $f_\textup{DM}$ then the satellite population from our prior analysis. The median $f_\textup{DM}$ of the DMDG population is $0.486$. The median $f_\textup{DM}$ of all centrals is $0.741$. One significant distinction between the populations of DMDG and general centrals was that the median $R_{\textup{half}, \star}$ was significantly lower for the DMDG population ($2.101 \textup{ kpc}$) then the general central population ($3.419 \textup{ kpc}$). The full distribution of central $f_\textup{DM}$ and DMDG $f_\tetup{DM}$ is modeled in Figure \ref{Central DMDGS}. The distribution in Figure \ref{Central DMDGS} appears to exhibit significantly less skew than Figure \ref{fDM in Literature Resolved Galaxies} despite being clustered at approximately the same value of $f_\textup{DM}$. 
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Central DMDGS.jpg}
+    \caption{Number of resolved galaxies for each $f_\textup{DM}$ group (bin-size $0.1$) for DMDG centrals (left) and all centrals (right)}
+    \label{Central DMDGS}
+\end{figure}
+
+\subsection{Further Analysis and Case Study on Subhalo 1603468}
+We use the $Z-$score method detailed in Equation \ref{Z-score} to extract five sample central DMDGs. Additional information on these subhalos is given in Appendix \ref{app: Sample Central Subhalos}. Of these, we perform deeper analysis into the galaxy with the least deviation, Subhalo 160346. We analyze the merger history, large drops in $f_\textup{DM}$, and characteristics of this subhalo. The sample subhalo exhibits a lower $R_{\textup{half} \star}$ ($2.083$) than the median for DMDGs ($2.101$). We analyze the progression of $f_\textup{DM}$ in Figure \ref{1603468 fDM progression}. The general pattern is different to those seen in Figure \ref{fDM redshift behavior}. While the satellites experienced more sudden drops, the central seemed to have a steady and near-linear progression. The subhalo appears to have passed into DMDG status multiple times, and only retaining its final status recently. The final $f_\textup{DM}$ is $0.49$. The subhalo crosses into DMDG status at redshift $0.142$ and $0.049$. The largest drops in $f_\textup{DM}$ for Subhalo 1603468 are given in Table \ref{Largest Drops 1603468}. The full merger history is in Appendix \ref{1604368 Merger History}. Subhalo $1603468$ experiences mergers of low degree (low ratio of mass) at or within a range of $3$ snapshots of all of its major drops in $f_\textup{DM}$. However, the mass ratio between these mergers is very small and thus may be largely incosequential. It is unclear whether these mergers have direct effect in lowering $f_\textup{DM}$
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{1604368 fDM progression.jpg}
+    \caption{$f_\textup{DM}$ of subhalo 1604368 across varying redshift}
+    \label{1604368 fDM progresssion}
+\end{figure}
+\begin{table*}[t]
+\centering
+\caption{The ten largest decreases in the dark-matter fraction, $f_{\rm DM}$, identified along the evolutionary history. $\Delta f_{\rm DM}$ represents the change in dark-matter fraction between consecutive snapshots. $\Delta M_{\rm DM}/M_{\rm DM}$, $\Delta M_{\star}/M_{\star}$, and $\Delta M_{\rm gas}/M_{\rm gas}$ denote the fractional changes in dark-matter, stellar, and gas mass, respectively.}
+\label{Largest Drops 1603468}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabularx}{\columnwidth}
+\hline
+Snap. &
+$z$ &
+Subhalo ID &
+$f_{\rm DM}$ &
+$\Delta f_{\rm DM}$ &
+$\Delta M_{\rm DM}/M_{\rm DM}$ &
+$\Delta M_{\star}/M_{\star}$ &
+$\Delta M_{\rm gas}/M_{\rm gas}$ &
+$R_{\rm half}$ \\
+\hline
+
+11 & 7.005417 & 350000086200005359 & 0.817308 & $-0.108781$ & 0.288066 & 1.308672 & 0.119092 & 23.683020 \\
+37 & 1.666670 & 350000086200005333 & 0.491031 & $-0.071629$ & 0.110789 & 0.142532 & 0.079613 & 75.181808 \\
+16 & 5.227581 & 350000086200005354 & 0.795367 & $-0.058776$ & 0.290144 & 0.781837 & 0.455052 & 37.830990 \\
+27 & 2.733143 & 350000086200005343 & 0.613670 & $-0.058159$ & 0.058072 & 0.448698 & $-0.019425$ & 67.842056 \\
+34 & 1.904090 & 350000086200005336 & 0.554015 & $-0.049172$ & 0.090620 & 0.109346 & 0.163271 & 82.012291 \\
+13 & 6.010757 & 350000086200005357 & 0.864681 & $-0.049144$ & 0.573661 & 1.586404 & 0.561811 & 38.938385 \\
+20 & 4.176835 & 350000086200005350 & 0.769383 & $-0.043948$ & 0.093914 & 0.160176 & 0.110611 & 51.821354 \\
+14 & 5.846614 & 350000086200005356 & 0.822891 & $-0.041790$ & 0.051064 & $-0.059020$ & 0.045014 & 38.833294 \\
+29 & 2.444226 & 350000086200005341 & 0.595746 & $-0.032798$ & 0.007715 & 0.138583 & 0.005541 & 67.320053 \\
+30 & 2.316111 & 350000086200005340 & 0.565224 & $-0.030521$ & 0.031244 & 0.164625 & 0.026083 & 62.248104 \\
+
+\hline
+\end{tabularx}
+\end{table*}
+
+\subsection{Machine Learning Analysis} 
+For our reported sample central galaxy, $1604368$, we use a Random Forest regressor and classifier to find the predictive importance of different factors on $f_\textup{DM}$. Our regressor uses the criteria listed in Section \ref{Machine Learning Analysis Methodology} (test set of $20\%$, a random seed of $42$, $500$ estimators with a minimum split sample of $2$, and a minimum leaf sample of $1$). We use a Standard Scaler \cite{sciKitLearn} based on logarithmic stellar mass and logarithmic host mass to find $3$ control centrals for each DMDG central. The regressor, when using logarithmic stellar mass,  logarithmic host halo mass, gas mass fraction, stellar formation rate, maximum velocity, and nearest neighbor-satelite distance as features for a target of $f_\textup{DM}$, returns $R^2$ of $0.497$. However, the $R^2$ is significantly worse for DMDGs. The median residual (actual value - predicted value) was $-0.122$ for DMDGs, and $0.001$ for controls. Because the median DMDG $f_\textup{DM}$ was $0.486$, the median residual is enough to shift the DMDG's to a non-DMDG classification. We expect this difference is both due to the smaller DMDG population in our test set and the lack of distinct correlation for any of the features used. Stellar mass is given the highest feature importance ($0.258$), followed by stellar formation rate $0.251$) (Table \ref{feature importance rf centrals}). This somewhat opposes the patterns in Table \ref{feature importance rf}, which had $\frac{r}{R_{200c}}$ as the most impactful feature. We omitted this measure in our analysis and instead used distance to nearest satellite galaxy. We calculated this value by finding the lowest three-dimensional across all satellites in the corresponding group at snapshot 99. Distance to nearest satellite had the lowest feature importance of $0.027$.
+
+\begin{table}[ht]
+\centering
+\caption{Random Forest feature importance for DMDG classification for centrals}
+\label{feature importance rf centrals}
+\begin{tabular}{lc}
+\hline
+\textbf{Feature} & \textbf{Importance} \\
+\hline
+$\log M_{\star}$ & 0.257761 \\
+SFR & 0.251318 \\
+$\log M_{\mathrm{host}}$ & 0.237488 \\
+$V_{\max}$ & 0.130301 \\
+Gas fraction & 0.096288 \\
+Nearest satellite distance & 0.026843 \\
+\hline
+\end{tabular}
+\end{table}
+
+We continue our analysis with a Random Forest Classifier \cite{sciKitLearn} employing the same criteria (test set of $20\%$, a random seed of $42$, $500$ estimators with a minimum split sample of $2$, and a minimum leaf sample of $1$) and test set. We employ the same features and target as the regression analysis. Our classifier struggles significantly in categorizing DMDGs and identified no DMDGs and no non-DMDGs as having $f_\textup{DM}<0.5$ (Table \ref{rf classifier centrals}). Interestingly, the feature distribution is slightly different than that of the regressor, with stellar formation rate holding slightly higher feature importance than stellar mass ($0.294$ and $0.201$, respectively). 
+
+\begin{table}[ht]
+\centering
+\caption{Random Forest classification performance and feature importance for identifying dark-matter-deficient galaxies (DMDGs). The classifier achieved an ROC-AUC of 0.802 and a PR-AUC of 0.015. Because no DMDGs were predicted in the test set, precision, recall, and F1-score for the DMDG class were zero.}
+\label{tab:rf_results}
+\begin{tabular}{lcccc}
+\hline
+\textbf{Class} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Support} \
+\hline
+Non-DMDG & 1.00 & 1.00 & 1.00 & 18,589 \
+DMDG     & 0.00 & 0.00 & 0.00 & 19 \
+\hline
+\textbf{Accuracy} & \multicolumn{3}{c}{1.00} & 18,608 \
+\textbf{ROC-AUC} & \multicolumn{3}{c}{0.8018} & \
+\textbf{PR-AUC} & \multicolumn{3}{c}{0.0151} & \
+\hline
+\end{tabular}
+
+\vspace{0.5cm}
+
+\begin{tabular}{lc}
+\hline
+\textbf{Feature} & \textbf{Importance} \
+\hline
+SFR                       & 0.294414 \
+$\log M_{\star}$          & 0.201731 \
+$V_{\max}$                & 0.179085 \
+$\log M_{\mathrm{host}}$  & 0.171534 \
+Gas fraction               & 0.116480 \
+Nearest satellite distance & 0.036757 \
+\hline
+\end{tabular}
+\end{table}
+
+
+We further analyze feature importance through SHAP. The given results for our RF classifier are given by Figure \ref{Shap Beeswarm Centrals}. We stress that the feature values throughout this section may not have the strongest impact because of the low $R^2$ of the models for DMDGs. Our SHAP analysis provides that high stellar formation rates are associated with higher likelihood of DMDG status. $V_\textup{max}$ is slightly more varied in its clustering and appears to have a non-linear predictable association. Logarithmic stellar mass is skewed towards the left, with low values producing a negative result (lower chance of being a DMDG). Nearest Satellite Distance, despite modeling a relationship similar to $\frac{r}{R_{200c}}$, was primarily clustered around no feature importance ($0.0$).
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{Shap Beeswarm .jpg}
+    \caption{SHAP feature analysis for SFR, $V_\textup{max}$, $M_\star$, $M_{200c}$, and distance to nearest satellite for central galaxies RF classifier.}
+    \label{Shap Beeswarm Centrals}
+\end{figure}
+
+\subsection{Discussion}
+As a brief overview of the central DMDG analysis, we find that the trend does not dispute but is not particularly indicative of tidal stripping as a mechanism for DMDG formation. Tidal stripping is highly motivated by mergers displacing central galaxies and their surrounding mass. Central galaxies themselves thus could not have been "tidally stripped" but may have experienced the effects of tidal stripping. The external dark matter mass, typically located outside of the inner radius, could still be drawn by gravitational forces from mergers. 
+
+Our case study galaxy, $1604368$, experienced mergers within $3$ snapshot values of each significant drop in $f_\textup{DM}$. However, similar to Subhalo $738558$, these were low-intensity mergers and experienced low mass ratios. This may be related to the smooth loss of $f_\textup{DM}$ depicted in Figure \ref{1604368 fDM progresssion}, although it is not directly clear whether this correlation is causal. Due to the minor mass ratios, we have little reason to believe this correlation is significant at all. 
+
+Nearest satellite distance showed low predictive importance in RF classification and regression, despite a related measure, $\frac{r}{R_{200c}}$ showing the highest predictive importance. Tidal stripping would likely be supported by nearby satellite galaxies providing gravitational force to loosely bound dark matter. However, this correlation does not appear in our dataset. 
+
+Noticeably, the distribution of $f_\textup{DM}$ for centrals (Figure \ref{Central DMDGS}) exhibits significantly less skew than that of the satellites from Jing et al. (Figure \ref{fDM in Literature Resolved Galaxies}). The data is roughly balanced around the median $0.741$. Thus, it is unclear whether the DMDGs are formed via significant and contrasting processes or rather makeup the lower end of a normal distribution. The lack of predictive accuracy for DMDGs also decreases the statistical significance of feature importance values in our RF classifier and regression for centrals. Our case study analysis of DMDG is also relatively shallow and does not encompass all possible formation pathways. Further analysis into a larger population of centrals may be necessary to fully understand the evolutionary processes behind these formations.
+
+\section{$R_{\textup{half}, \star}$ Dependency and Relationship}
+In both the satellite and central populations, the DMDG section exhibited significantly less $R_{\textup{half}, \star}$ than their central counterpart population. This may be due to the calculation for $f_\textup{DM}$ (Equation \ref{fDM Calculation}) which relies on the included mass within $2R_{\textup{half}, \star}$. For smaller $2R_{\textup{half}, \star}$, it is possible that the focus is shifted towards the more tightly-bound, inner stellar mass and excludes loosely-bound dark matter. We further analyze this correlation throughout this section.
+
+We first analyze the relationship with $f_\textup{DM}$ (Figure \ref{R_half_star vs f_DM}). For literature selected satellites following the criteria of Jing et a. \cite{Jing_2019}, the reported Pearson correlation was $r=0.688$. For centrals, the Pearson correlation was $0.396$. Noticeably, the distribution for the centrals includes a wide range of $f_\textup{DM}$ at lower $R_{\textup{half}, \star}$ apart from the separate correlation. Both trends follow rounded, near-logarithmic trends with wider range of $f_\textup{DM}$ at lower $R_{\textup{half}, \star}$. 
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{R_half_star vs f_DM.jpg}
+    \caption{$R_{\textup{half}, \star}$ plotted in comparison to $f_\textup{DM}$ for literature-selected satellites (left) and centrals (right) with DMDG value depicted by dashed line}
+    \label{R_half_star vs f_DM}
+\end{figure}
+
+We pursue a further relationship on the dependency on $f_\textup{DM}$ on $R_{\textup{half}, \star}$ through the prevalence of $M_\star$ (Figure \ref{R_half_star vs M_star}). This particular relationship is important for our analysis because $M_\star$ in $R_{\textup{half}, \star}$ accounts for the normalized scale of $M_\textup{DM}$. If a relationship is present and significant, this may affect our measurement's predictive accuracy and generalizability. Specifically, we highlight DMDGs to see if the correlation is different for DMDGs. Noticeably, for both centrals and satellites (literature) the DMDGs (red) were typically in the lower range of $R_{\textup{half}, \star}$, which correlates with the trens from Figure \ref{R_half_star vs f_DM}. There appears to be a generally positive correlation, especially with centrals ($r=0.86$). The satellite group had a much weaker correlation ($r=-0.016$). The correlation for centrals may be less indicative for DMDGs due to the smaller sample group.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{R_half_star vs M_star.jpg}
+    \caption{$R_{\textup{half}, \star}$ plotted against stellar mass ($M_\star / M_\odot$ ) for staellite galaxies from literature selection (left) and central galaxies (right). non-extreme DMDGs are indicated in red and non-DMDGs are indicated in blue. }
+    \label{R_half_star vs M_star}
+\end{figure}
 \section{Conclusions}
 
 Your conclusions here.
-
 \acknowledgments
 
 Acknowledgments here.
@@ -131,5 +440,209 @@ Acknowledgments here.
 \software{Python, NumPy, pandas, h5py, Matplotlib}
 
 \printbibliography
+\appendix
+\section{Appendix A - Merger History of Subhalo 738558} \label{app: Merger History}
 
+The complete merger history of Subhalo 738558, the $z=0$ galaxy examined in
+this analysis, is presented in Table~\ref{tab:merger_history_738558}.
+The SubLink main progenitor branch contains 96 snapshots and 42 identified
+merger events. Merger mass ratios are calculated as
+
+\[
+\mu = \frac{M_{\mathrm{secondary}}}{M_{\mathrm{primary}}},
+\]
+
+where the primary and secondary masses are the total bound subhalo masses
+at the corresponding merger snapshot. Events are classified as major
+($\mu \geq 0.25$), minor ($0.10 \leq \mu < 0.25$), or very minor
+($\mu < 0.10$).
+
+The merger history contains three minor mergers and 39 very minor mergers,
+with no mergers satisfying the adopted major-merger threshold. The largest
+identified mass ratio is $\mu=0.2362$, occurring at snapshot 6.
+
+\begin{table}[ht]
+\centering
+\caption{Complete merger history of Subhalo 738558. The merger mass ratio
+is defined as $\mu=M_{\mathrm{secondary}}/M_{\mathrm{primary}}$, using the
+total bound subhalo masses at the merger snapshot.}
+\label{tab:merger_history_738558}
+\small
+\begin{tabular}{rrrrrrr}
+\hline
+\textbf{Snap.} &
+\textbf{Primary ID} &
+\textbf{Secondary ID} &
+\textbf{$M_{\rm primary}$} &
+\textbf{$M_{\rm secondary}$} &
+\textbf{$\mu$} &
+\textbf{Type} \\
+\hline
+
+55 & 317979 & 318069 & 67.493 & 0.11085 & 0.001642 & Very minor \\
+53 & 295530 & 295538 & 55.714 & 4.8852 & 0.087684 & Very minor \\
+53 & 295530 & 295552 & 55.714 & 0.84813 & 0.015223 & Very minor \\
+53 & 295530 & 295721 & 55.714 & 0.079669 & 0.001430 & Very minor \\
+50 & 355694 & 355723 & 64.058 & 0.18640 & 0.002910 & Very minor \\
+49 & 402296 & 402338 & 65.751 & 0.065387 & 0.000994 & Very minor \\
+42 & 887568 & 887583 & 50.149 & 0.091619 & 0.001827 & Very minor \\
+41 & 842182 & 842193 & 50.990 & 0.078624 & 0.001542 & Very minor \\
+40 & 792094 & 792112 & 53.050 & 0.10357 & 0.001952 & Very minor \\
+39 & 770783 & 5127333 & 51.894 & 0.079669 & 0.001535 & Very minor \\
+39 & 770783 & 770804 & 51.894 & 0.076471 & 0.001474 & Very minor \\
+38 & 727807 & 727828 & 52.292 & 0.091619 & 0.001752 & Very minor \\
+37 & 691473 & 691492 & 49.608 & 0.16144 & 0.003254 & Very minor \\
+37 & 691473 & 691501 & 49.608 & 0.079669 & 0.001606 & Very minor \\
+35 & 741496 & 741500 & 40.190 & 0.25700 & 0.006395 & Very minor \\
+35 & 741496 & 741508 & 40.190 & 0.13145 & 0.003271 & Very minor \\
+35 & 741496 & 15231339 & 40.190 & 0.12747 & 0.003172 & Very minor \\
+35 & 741496 & 741513 & 40.190 & 0.079669 & 0.001982 & Very minor \\
+34 & 716508 & 716514 & 37.042 & 0.22763 & 0.006145 & Very minor \\
+33 & 685533 & 685544 & 31.822 & 0.13145 & 0.004131 & Very minor \\
+33 & 685533 & 685550 & 31.822 & 0.066945 & 0.002104 & Very minor \\
+33 & 685533 & 685543 & 31.822 & 0.073582 & 0.002312 & Very minor \\
+33 & 685533 & 685547 & 31.822 & 0.075309 & 0.002367 & Very minor \\
+32 & 662855 & 662874 & 26.884 & 0.076562 & 0.002848 & Very minor \\
+32 & 662855 & 662872 & 26.884 & 0.085232 & 0.003170 & Very minor \\
+31 & 688911 & 688918 & 23.760 & 0.21237 & 0.008938 & Very minor \\
+31 & 688911 & 688925 & 23.760 & 0.079669 & 0.003353 & Very minor \\
+29 & 835880 & 14405351 & 17.764 & 0.083652 & 0.004709 & Very minor \\
+27 & 776220 & 776224 & 10.563 & 0.11950 & 0.011313 & Very minor \\
+27 & 776220 & 8552968 & 10.563 & 0.20972 & 0.019854 & Very minor \\
+27 & 776220 & 776225 & 10.563 & 0.073715 & 0.006979 & Very minor \\
+26 & 1101203 & 1101205 & 8.2088 & 0.14141 & 0.017226 & Very minor \\
+24 & 913355 & 913356 & 7.8547 & 0.11759 & 0.014975 & Very minor \\
+23 & 860044 & 860045 & 6.8785 & 0.21394 & 0.031103 & Very minor \\
+21 & 809068 & 809069 & 5.0857 & 0.069880 & 0.013740 & Very minor \\
+19 & 720434 & 720435 & 4.0362 & 0.19061 & 0.047224 & Very minor \\
+15 & 490459 & 490460 & 2.2725 & 0.18820 & 0.082814 & Very minor \\
+15 & 490459 & 490461 & 2.2725 & 0.10286 & 0.045261 & Very minor \\
+12 & 683654 & 3611376 & 1.1391 & 0.13283 & 0.11661 & Minor \\
+11 & 615061 & 7579817 & 0.85918 & 0.054559 & 0.063501 & Very minor \\
+6 & 343693 & 2340707 & 0.34349 & 0.081141 & 0.23623 & Minor \\
+5 & 394987 & 866886 & 0.25332 & 0.052912 & 0.20887 & Minor \\
+
+\hline
+\end{tabular}
+\end{table}
+
+\section{Appendix B - Sample Central Subhalos} \label{app: Sample Central Subhalos}
+The subhalo ID and relevant metrics for our five selected sample central DMDGs are given by Table \ref{sample centrals}. We find the compiled mass at different radii for different types (stellar, baryonic, total) in Figure \ref{sample centrals at radii}. Additional data for $f_\textup{DM}$ at different redshifts for two of our sample galaxies is given in Figure \ref{fDM at redshift centrals}. Noticeably, Figure \ref{sample centrals at radii} shows similar trends to Figure \ref{M vs r literature sample} with stellar mass largely dominating dark matter within the inner radius. Figure \ref{fDM at redshift centrals} demonstrated the same trend of smooth loss of $f_\textup{DM}$ as Figure \ref{1604368 fDM progresssion}
+
+\begin{table}[t]
+\centering
+\caption{Five representative dark-matter-deficient galaxies (DMDGs). $M_{\star}$ is the stellar mass, $M_{\mathrm{total},2R_{\textup{half}, \star}}$ is the total mass within twice the stellar half-mass radius, $f_{\mathrm{DM}}$ is the dark-matter fraction within $2R_{\textup{half}, \star}$, $R_{\mathrm{half,\star}}$ is the stellar half-mass radius, and $d_{\mathrm{total}}$ is the total distance measure used in the selection.}
+\label{sample centrals}
+\scriptsize
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{rrrrrrr}
+\hline
+Subhalo ID & Group ID & $M_{\star}$ & $M_{\mathrm{total},2R_{\textup{half}, \star}}$ &
+$f_{\mathrm{DM}}$ & $R_{\mathrm{half,\star}}$ & $d_{\mathrm{total}}$ \\
+\hline
+1603468 & 17403 & 2.442713 & 5.182994 & 0.488034 & 2.083286 & 0.428917 \\
+1784604 & 30047 & 2.662195 & 5.193266 & 0.486302 & 2.703830 & 0.453012 \\
+1763757 & 28223 & 2.175894 & 4.400174 & 0.489761 & 2.314904 & 0.465986 \\
+1804523 & 31931 & 2.099484 & 4.272826 & 0.483848 & 2.035346 & 0.479435 \\
+1723072 & 24978 & 2.805873 & 4.361835 & 0.489500 & 2.031300 & 0.503823 \\
+\hline
+\end{tabular}
+\end{table}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{sample centrals at radii.jpg}
+    \caption{The total cumulative mass of dark matter particles (black), stellar mass (red), and total mass (grey) displayed against radii from center of subhalo for five representative central DMDGs}
+    \label{sample centrals at radii}
+\end{figure}
+\begin{figure}
+    \centering
+    \includegraphics[width=1\linewidth]{fDM at redshift centrals.jpg}
+    \caption{$f_\textup{DM}$ shown at different redshift $z$ for subhalo $178604$ (left) and $1763757$ (right}
+    \label{fDM at redshift centrals}
+\end{figure}
+\section{Appendix C - Merger History for Subhalo $1603468$}
+\begin{landscape}
+\begin{longtable}{rrrrrrl}
+\caption{Merger history of the representative DMDG. Primary and secondary masses are given in the simulation mass units used in the merger-tree analysis. The mass ratio is defined as $M_{\rm secondary}/M_{\rm primary}$.}
+\label{tab:dmdg_merger_history}\\
+\toprule
+SnapNum & Primary ID & Secondary ID & $M_{\rm primary}$ & $M_{\rm secondary}$ & Mass Ratio & Merger Type \\
+\midrule
+\endfirsthead
+
+\multicolumn{7}{c}%
+{{\tablename\ \thetable{} -- continued from previous page}} \\
+\toprule
+SnapNum & Primary ID & Secondary ID & $M_{\rm primary}$ & $M_{\rm secondary}$ & Mass Ratio & Merger Type \\
+\midrule
+\endhead
+
+\midrule
+\multicolumn{7}{r}{{Continued on next page}} \\
+\endfoot
+
+\bottomrule
+\endlastfoot
+
+98 & 1596600 & 1596617 & $1.4622\times10^{2}$ & $9.5602\times10^{-2}$ & $6.5383\times10^{-4}$ & Very minor \\
+98 & 1596600 & 1596619 & $1.4622\times10^{2}$ & $8.3652\times10^{-2}$ & $5.7210\times10^{-4}$ & Very minor \\
+96 & 1580168 & 1580189 & $1.4380\times10^{2}$ & $8.7635\times10^{-2}$ & $6.0943\times10^{-4}$ & Very minor \\
+96 & 1580168 & 1580190 & $1.4380\times10^{2}$ & $8.7635\times10^{-2}$ & $6.0943\times10^{-4}$ & Very minor \\
+95 & 1573749 & 1573766 & $1.3821\times10^{2}$ & $1.2614\times10^{-1}$ & $9.1267\times10^{-4}$ & Very minor \\
+94 & 1566220 & 1566245 & $1.3514\times10^{2}$ & $7.9669\times10^{-2}$ & $5.8952\times10^{-4}$ & Very minor \\
+93 & 1553402 & 1553428 & $1.3096\times10^{2}$ & $7.9669\times10^{-2}$ & $6.0833\times10^{-4}$ & Very minor \\
+90 & 1538587 & 1538611 & $1.1797\times10^{2}$ & $9.1619\times10^{-2}$ & $7.7666\times10^{-4}$ & Very minor \\
+89 & 1531995 & 1532020 & $1.1516\times10^{2}$ & $9.1619\times10^{-2}$ & $7.9561\times10^{-4}$ & Very minor \\
+86 & 1509990 & 1510016 & $1.0932\times10^{2}$ & $7.9669\times10^{-2}$ & $7.2874\times10^{-4}$ & Very minor \\
+85 & 1510421 & 8834491 & $1.0381\times10^{2}$ & $9.1619\times10^{-2}$ & $8.8254\times10^{-4}$ & Very minor \\
+60 & 1508722 & 1508729 & $5.5160\times10^{1}$ & $9.1619\times10^{-2}$ & $1.6610\times10^{-3}$ & Very minor \\
+57 & 1504025 & 1504030 & $5.0538\times10^{1}$ & $7.9669\times10^{-2}$ & $1.5764\times10^{-3}$ & Very minor \\
+49 & 1385236 & 1385238 & $4.4083\times10^{1}$ & $9.5602\times10^{-2}$ & $2.1687\times10^{-3}$ & Very minor \\
+47 & 1333787 & 1333790 & $4.3534\times10^{1}$ & $1.5934\times10^{-1}$ & $3.6601\times10^{-3}$ & Very minor \\
+46 & 1292536 & 1292541 & $4.4310\times10^{1}$ & $1.0972\times10^{-1}$ & $2.4762\times10^{-3}$ & Very minor \\
+45 & 1240285 & 1240293 & $4.5675\times10^{1}$ & $7.9669\times10^{-2}$ & $1.7442\times10^{-3}$ & Very minor \\
+43 & 1139690 & 1139695 & $4.8818\times10^{1}$ & $1.6854\times10^{-1}$ & $3.4524\times10^{-3}$ & Very minor \\
+43 & 1139690 & 1139697 & $4.8818\times10^{1}$ & $1.2349\times10^{-1}$ & $2.5295\times10^{-3}$ & Very minor \\
+42 & 1097480 & 1097492 & $4.9436\times10^{1}$ & $8.7635\times10^{-2}$ & $1.7727\times10^{-3}$ & Very minor \\
+40 & 1038638 & 1038648 & $4.7017\times10^{1}$ & $7.6561\times10^{-2}$ & $1.6284\times10^{-3}$ & Very minor \\
+40 & 1038638 & 7400153 & $4.7017\times10^{1}$ & $1.0357\times10^{-1}$ & $2.2028\times10^{-3}$ & Very minor \\
+39 & 1007453 & 12859064 & $4.7191\times10^{1}$ & $9.5602\times10^{-2}$ & $2.0259\times10^{-3}$ & Very minor \\
+38 & 993705 & 15320973 & $4.4472\times10^{1}$ & $7.9669\times10^{-2}$ & $1.7914\times10^{-3}$ & Very minor \\
+37 & 974933 & 974938 & $4.3005\times10^{1}$ & $1.5418\times10^{-1}$ & $3.5852\times10^{-3}$ & Very minor \\
+37 & 974933 & 974940 & $4.3005\times10^{1}$ & $1.5535\times10^{-1}$ & $3.6125\times10^{-3}$ & Very minor \\
+36 & 943338 & 943349 & $3.8848\times10^{1}$ & $6.7772\times10^{-2}$ & $1.7445\times10^{-3}$ & Very minor \\
+36 & 943338 & 943350 & $3.8848\times10^{1}$ & $9.9586\times10^{-2}$ & $2.5635\times10^{-3}$ & Very minor \\
+35 & 913998 & 914010 & $3.4634\times10^{1}$ & $1.1950\times10^{-1}$ & $3.4505\times10^{-3}$ & Very minor \\
+35 & 913998 & 914013 & $3.4634\times10^{1}$ & $8.9664\times10^{-2}$ & $2.5889\times10^{-3}$ & Very minor \\
+31 & 909758 & 909764 & $2.3992\times10^{1}$ & $8.0575\times10^{-2}$ & $3.3585\times10^{-3}$ & Very minor \\
+30 & 898259 & 10925366 & $2.2602\times10^{1}$ & $1.4720\times10^{-1}$ & $6.5127\times10^{-3}$ & Very minor \\
+29 & 847902 & 847904 & $2.1894\times10^{1}$ & $1.6412\times10^{-1}$ & $7.4962\times10^{-3}$ & Very minor \\
+29 & 847902 & 847905 & $2.1894\times10^{1}$ & $8.7141\times10^{-2}$ & $3.9802\times10^{-3}$ & Very minor \\
+24 & 668519 & 668520 & $1.2552\times10^{1}$ & $9.8550\times10^{-2}$ & $7.8512\times10^{-3}$ & Very minor \\
+24 & 668519 & 9154776 & $1.2552\times10^{1}$ & $1.3262\times10^{-1}$ & $1.0565\times10^{-2}$ & Very minor \\
+23 & 589005 & 589007 & $1.1967\times10^{1}$ & $1.4600\times10^{-1}$ & $1.2200\times10^{-2}$ & Very minor \\
+22 & 529889 & 529891 & $1.0941\times10^{1}$ & $2.0059\times10^{-1}$ & $1.8334\times10^{-2}$ & Very minor \\
+19 & 380907 & 380908 & $8.4787$ & $7.0233\times10^{-2}$ & $8.2835\times10^{-3}$ & Very minor \\
+18 & 373500 & 10253383 & $7.2669$ & $1.1312\times10^{-1}$ & $1.5566\times10^{-2}$ & Very minor \\
+18 & 373500 & 10822678 & $7.2669$ & $8.7116\times10^{-2}$ & $1.1988\times10^{-2}$ & Very minor \\
+18 & 373500 & 15629295 & $7.2669$ & $7.4167\times10^{-2}$ & $1.0206\times10^{-2}$ & Very minor \\
+18 & 373500 & 4960782 & $7.2669$ & $6.8222\times10^{-2}$ & $9.3880\times10^{-3}$ & Very minor \\
+17 & 312892 & 312893 & $6.0868$ & $2.5818\times10^{-1}$ & $4.2416\times10^{-2}$ & Very minor \\
+15 & 302592 & 12319752 & $3.9887$ & $8.1586\times10^{-2}$ & $2.0454\times10^{-2}$ & Very minor \\
+15 & 302592 & 302594 & $3.9887$ & $7.8117\times10^{-2}$ & $1.9585\times10^{-2}$ & Very minor \\
+15 & 302592 & 302593 & $3.9887$ & $1.2131\times10^{-1}$ & $3.0414\times10^{-2}$ & Very minor \\
+15 & 302592 & 10613781 & $3.9887$ & $6.1889\times10^{-2}$ & $1.5516\times10^{-2}$ & Very minor \\
+14 & 289900 & 8917768 & $3.2954$ & $7.1901\times10^{-2}$ & $2.1819\times10^{-2}$ & Very minor \\
+13 & 263378 & 9873403 & $3.1379$ & $6.5552\times10^{-2}$ & $2.0891\times10^{-2}$ & Very minor \\
+12 & 286755 & 286756 & $1.9939$ & $9.0360\times10^{-2}$ & $4.5319\times10^{-2}$ & Very minor \\
+12 & 286755 & 286757 & $1.9939$ & $6.0322\times10^{-2}$ & $3.0254\times10^{-2}$ & Very minor \\
+12 & 286755 & 6445401 & $1.9939$ & $8.1272\times10^{-2}$ & $4.0761\times10^{-2}$ & Very minor \\
+12 & 286755 & 9269439 & $1.9939$ & $6.3261\times10^{-2}$ & $3.1728\times10^{-2}$ & Very minor \\
+11 & 351088 & 4052528 & $1.3429$ & $1.0449\times10^{-1}$ & $7.7807\times10^{-2}$ & Very minor \\
+6 & 570480 & 892088 & $2.4968\times10^{-1}$ & $1.8201\times10^{-1}$ & $7.2895\times10^{-1}$ & Major \\
+6 & 570480 & 1039429 & $2.4968\times10^{-1}$ & $1.5447\times10^{-1}$ & $6.1866\times10^{-1}$ & Major \\
+5 & 379636 & 641791 & $2.5998\times10^{-1}$ & $1.8515\times10^{-1}$ & $7.1215\times10^{-1}$ & Major \\
+
+\end{longtable}
+\end{landscape}
 \end{document}
