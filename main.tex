@@ -55,9 +55,8 @@ To establish sample subhaloes used for environmental and merger analysis, we use
 \end{equation}
 \begin{equation}
 \label{Standardized Distance}
-\textup{Deviation} = \sqrt{Z_\textup{Log Stellar Mass}^2+Z_\textup{Total Mass}^2+Z_f_\textup{DM}^2}
+\textup{Deviation} = \sqrt{Z_{\textup{Log Stellar Mass}}^2+Z_{\textup{Total Mass}}^2+Z_f_{\textup{DM}}^2}
 \end{equation}
-
 
 \subsection{Subhalo Behavior and Movement} \label{Subhalo Behavior and Movement}
 To understand the evolutionary histories correlated with DMDGs, we interpret merger trees provided by the TNG 300-1 catalog. Our analysis is carried out independently for specified subhalo IDs at selected snapshots. A SubFindID is assigned by TNG 300-1 and connected to corresponding subhalos across different snapshots and merger events via the SubLink algorithm. Corresponding or shared particles are used to identify potential descendant candidates and ranked by particle binding-energy. To describe and identify the mergers experienced by a galaxy, we separate the merger branches and identify if any significant branch is found at the specific snapshot. 
@@ -81,7 +80,7 @@ We begin our analysis by attempting to reproduce simulation methodology by Jing 
 \subsection{Population of Dark-Matter-Deficient Galaxies}
 We use the reported pipeline in Jing et. al to extract resolved satellite galaxies. We employ the criteria listed in \ref{Galaxy Selection Pipeline} in addition to our standard resolved galaxy selection (stellar mass $10^9 < M_\star < 10^{10} M_\odot$, host halo mass $M_{200} > 10^{13} M_\odot$, and a classification as a satellite galaxy by the TNG 300-1 catalog). This provides us with a catalog of $15,595$ resolved satellite galaxies, $513$ total DMDGS. The distribution of $f_\textup{DM}$ is modeled in Figure \ref{fDM in Literature Resolved Galaxies}. The median $f_\textup{DM}$ for DMDGs is $0.380$, including extreme DMDGS. The distribution features a left skew and median above the middle of the range indicating high $f_\textup{DM}$ is more common in DMDGs. The median $f_\textup{DM}$ for all selected satellites  is $0.784$. Furthermore, the median $R_{\textup{half}, \star}$ is significantly lower in DMDGs ($1.257$) than in the whole population ($2.966$),
 
-The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an abnormal spike in the lowest $f_\textup{DM}$ ($f_\textup{DM} < 0.01$). This trend is also consistent with results from Jing et al., \cite{Jing_2019}. To account for this, Jing filters their catalog group into extreme and non-extreme DMDGs, where $0.05 \leq f_\textup{DM} < 0.5$ for non-extreme DMDGs. We apply this cut for our DMDG catalog and re-calculate median values to be $0.420$ for non-extreme DMDGs and $0.785$. Jing references tidal stripping and displacement of central galaxies during mergers as a likely cause for the distribution \cite{2018MNRAS.474..580P}. We attempt to further clarify this trend in Section \ref{Merger History and Environmental Analysis}. 
+The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an abnormal spike in the lowest $f_\textup{DM}$ ($f_\textup{DM} < 0.01$). This trend is also consistent with results from Jing et al., \cite{Jing_2019}. To account for this, Jing filters their catalog group into extreme and non-extreme DMDGs, where $0.05 \leq f_\textup{DM} < 0.5$ for non-extreme DMDGs. We apply this cut for our DMDG catalog and re-calculate median values to be $0.420$ for non-extreme DMDGs and $0.785$.  We employ a $t-$test to quantify the differing distributions and find a result of $-95.9$ with $p-$value of $0.0$. Jing references tidal stripping and displacement of central galaxies during mergers as a likely cause for the distribution \cite{2018MNRAS.474..580P}. We attempt to further clarify this trend in Section \ref{Merger History and Environmental Analysis}. 
 \begin{figure}
     \centering
     \includegraphics[width=1.0\linewidth]{fDM in Literature Resolved Galaxies.jpg}
@@ -89,7 +88,9 @@ The distribution from Figure \ref{fDM in Literature Resolved Galaxies} shows an 
     \label{fDM in Literature Resolved Galaxies}
 \end{figure}
 
-$f_\textup{DM}$ is modeled against halo-centric distance $\frac{r}{R_{200}}$ for galaxies selected from the literature pipeline in \ref{fDM against radius}. There is a positive yet weak correlation ($r=0.171$). Extreme DMDGs are spread out along a higher range of $\frac{r}{R_{200}}$ then non-extreme DMDGs. The median $\frac{r}{R_{200c}}$ for non-extreme DMDGs is $0.094$, for extreme DMDGs is $0.520$ and for the entire galaxy selection is $0.781$. The positive Pearson correlation coefficient indicates association between near-center satellite galaxies and low $f_\textup{DM}$, which could be supporting evidence  of tidally-stripped galaxies becoming DMDGs, although further analysis is necessary to distinguish tidal processes from other contending pathways. This trend is not nescessarily applicable for extreme DMDGs, which have a higher median $\frac{r}{R_{200c}}$ then the non-extreme sample. This may be evidence that a separate formation process may affect the prescence of these bodies.
+$f_\textup{DM}$ is modeled against halo-centric distance $\frac{r}{R_{200}}$ for galaxies selected from the literature pipeline in \ref{fDM against radius}.  There exists a weak linear trend ($r=0.171$) but a general positive correlation ($\rho = 0.258$). Results are given with a $p-$value of $1.237 \times 10^{-235}$ Extreme DMDGs are spread out along a higher range of $\frac{r}{R_{200}}$ then non-extreme DMDGs. The median $\frac{r}{R_{200c}}$ for non-extreme DMDGs is $0.094$, for extreme DMDGs is $0.520$ and for the entire galaxy selection is $0.781$. The positive Pearson correlation coefficient indicates association between near-center satellite galaxies and low $f_\textup{DM}$, which could be supporting evidence  of tidally-stripped galaxies becoming DMDGs, although further analysis is necessary to distinguish tidal processes from other contending pathways.
+
+This trend is not nescessarily applicable for extreme DMDGs, which have a higher median $\frac{r}{R_{200c}}$ then the non-extreme sample. This may be evidence that a separate formation process may affect the prescence of these bodies.
 \begin{figure}
     \centering
     \includegraphics[width=1\linewidth]{fDM against radius.jpg}
@@ -286,7 +287,7 @@ There are a few limitations and inconsistencies with our data. First is that sub
 \section{Central Galaxy Analysis} \label{Central Galaxy Analysis}
 To further understand the presence and formation of DMDGs in TNG 300-1, we seek to discover whether central galaxies can be considered DMDGs and whether they differ in evolutionary process or characteristics to the satellites and selected pipeline found in Jing et al. \cite{Jing_2019}. We use the same resolved subhalo pipeline as in Section \ref{Galaxy Selection Pipeline} ($N_\star \geq 500$ and  TNG 300-1 Subhalo Flag of 1). To analyze the entire central population, we apply no other mass cuts or other criteria except a necessary classification as a central by TNG 300-1. We employ the same criteria for DMDGs and non-extreme DMDGs ($f_\textup{DM} <0.5$, $f_\textup{DM} \geq 0.05$).
 
-The original selection pipeline (all resolved galaxies) finds $154,638$ suitable subhalos. Of these $93,039$ are classified as centrals and $96$ are DMDGs ($0.103\%$). There are no extreme DMDGs. Our DMDG population show significantly higher values of $f_\textup{DM}$ then the satellite population from our prior analysis. The median $f_\textup{DM}$ of the DMDG population is $0.486$. The median $f_\textup{DM}$ of all centrals is $0.741$. One significant distinction between the populations of DMDG and general centrals was that the median $R_{\textup{half}, \star}$ was significantly lower for the DMDG population ($2.101 \textup{ kpc}$) then the general central population ($3.419 \textup{ kpc}$). The full distribution of central $f_\textup{DM}$ and DMDG $f_\tetup{DM}$ is modeled in Figure \ref{Central DMDGS}. The distribution in Figure \ref{Central DMDGS} appears to exhibit significantly less skew than Figure \ref{fDM in Literature Resolved Galaxies} despite being clustered at approximately the same value of $f_\textup{DM}$. 
+The original selection pipeline (all resolved galaxies) finds $154,638$ suitable subhalos. Of these $93,039$ are classified as centrals and $96$ are DMDGs ($0.103\%$). There are no extreme DMDGs. Our DMDG population show significantly higher values of $f_\textup{DM}$ then the satellite population from our prior analysis. The median $f_\textup{DM}$ of the DMDG population is $0.486$. The median $f_\textup{DM}$ of all centrals is $0.741$. One significant distinction between the populations of DMDG and general centrals was that the median $R_{\textup{half}, \star}$ was significantly lower for the DMDG population ($2.101 \textup{ kpc}$) then the general central population ($3.419 \textup{ kpc}$). The full distribution of central $f_\textup{DM}$ and DMDG $f_\textup{DM}$ is modeled in Figure \ref{Central DMDGS}. The distribution in Figure \ref{Central DMDGS} appears to exhibit significantly less skew than Figure \ref{fDM in Literature Resolved Galaxies} despite being clustered at approximately the same value of $f_\textup{DM}$.  The dataset returns a $t-$test statistic of $-5.30$ with $p=1.13 \times 10^{-7}$.
 
 \begin{figure}
     \centering
@@ -303,39 +304,29 @@ We use the $Z-$score method detailed in Equation \ref{Z-score} to extract five s
     \caption{$f_\textup{DM}$ of subhalo 1604368 across varying redshift}
     \label{1604368 fDM progresssion}
 \end{figure}
-\begin{table*}[t]
+\begin{table}[ht]
 \centering
-\caption{The ten largest decreases in the dark-matter fraction, $f_{\rm DM}$, identified along the evolutionary history. $\Delta f_{\rm DM}$ represents the change in dark-matter fraction between consecutive snapshots. $\Delta M_{\rm DM}/M_{\rm DM}$, $\Delta M_{\star}/M_{\star}$, and $\Delta M_{\rm gas}/M_{\rm gas}$ denote the fractional changes in dark-matter, stellar, and gas mass, respectively.}
+\caption{The ten largest decreases in dark-matter fraction ($f_{\rm DM}$) along the evolutionary history of subhalo 1603468.}
 \label{Largest Drops 1603468}
 \scriptsize
-\setlength{\tabcolsep}{3pt}
-\begin{tabularx}{\columnwidth}
+\setlength{\tabcolsep}{1.5pt}
+\begin{tabularx}{\columnwidth}{@{}r c r r r r r r r@{}}
 \hline
-Snap. &
-$z$ &
-Subhalo ID &
-$f_{\rm DM}$ &
-$\Delta f_{\rm DM}$ &
-$\Delta M_{\rm DM}/M_{\rm DM}$ &
-$\Delta M_{\star}/M_{\star}$ &
-$\Delta M_{\rm gas}/M_{\rm gas}$ &
-$R_{\rm half}$ \\
+\textbf{Snap} & $z$ & \textbf{Subhalo ID} & $f_{\rm DM}$ & $\Delta f_{\rm DM}$ & $\frac{\Delta M_{\rm DM}}{M_{\rm DM}}$ & $\frac{\Delta M_{\star}}{M_{\star}}$ & $\frac{\Delta M_{\rm gas}}{M_{\rm gas}}$ & $R_{\rm half}$ \\
 \hline
-
-11 & 7.005417 & 350000086200005359 & 0.817308 & $-0.108781$ & 0.288066 & 1.308672 & 0.119092 & 23.683020 \\
-37 & 1.666670 & 350000086200005333 & 0.491031 & $-0.071629$ & 0.110789 & 0.142532 & 0.079613 & 75.181808 \\
-16 & 5.227581 & 350000086200005354 & 0.795367 & $-0.058776$ & 0.290144 & 0.781837 & 0.455052 & 37.830990 \\
-27 & 2.733143 & 350000086200005343 & 0.613670 & $-0.058159$ & 0.058072 & 0.448698 & $-0.019425$ & 67.842056 \\
-34 & 1.904090 & 350000086200005336 & 0.554015 & $-0.049172$ & 0.090620 & 0.109346 & 0.163271 & 82.012291 \\
-13 & 6.010757 & 350000086200005357 & 0.864681 & $-0.049144$ & 0.573661 & 1.586404 & 0.561811 & 38.938385 \\
-20 & 4.176835 & 350000086200005350 & 0.769383 & $-0.043948$ & 0.093914 & 0.160176 & 0.110611 & 51.821354 \\
-14 & 5.846614 & 350000086200005356 & 0.822891 & $-0.041790$ & 0.051064 & $-0.059020$ & 0.045014 & 38.833294 \\
-29 & 2.444226 & 350000086200005341 & 0.595746 & $-0.032798$ & 0.007715 & 0.138583 & 0.005541 & 67.320053 \\
-30 & 2.316111 & 350000086200005340 & 0.565224 & $-0.030521$ & 0.031244 & 0.164625 & 0.026083 & 62.248104 \\
-
+11 & 7.005 & 350000086200005359 & 0.817 & $-0.109$ & 0.288 & 1.309 & 0.119 & 23.68 \\
+37 & 1.667 & 350000086200005333 & 0.491 & $-0.072$ & 0.111 & 0.143 & 0.080 & 75.18 \\
+16 & 5.228 & 350000086200005354 & 0.795 & $-0.059$ & 0.290 & 0.782 & 0.455 & 37.83 \\
+27 & 2.733 & 350000086200005343 & 0.614 & $-0.058$ & 0.058 & 0.449 & $-0.019$ & 67.84 \\
+34 & 1.904 & 350000086200005336 & 0.554 & $-0.049$ & 0.091 & 0.109 & 0.163 & 82.01 \\
+13 & 6.011 & 350000086200005357 & 0.865 & $-0.049$ & 0.574 & 1.586 & 0.562 & 38.94 \\
+20 & 4.177 & 350000086200005350 & 0.769 & $-0.044$ & 0.094 & 0.160 & 0.111 & 51.82 \\
+14 & 5.847 & 350000086200005356 & 0.823 & $-0.042$ & 0.051 & $-0.059$ & 0.045 & 38.83 \\
+29 & 2.444 & 350000086200005341 & 0.596 & $-0.033$ & 0.008 & 0.139 & 0.006 & 67.32 \\
+30 & 2.316 & 350000086200005340 & 0.565 & $-0.031$ & 0.031 & 0.165 & 0.026 & 62.25 \\
 \hline
 \end{tabularx}
-\end{table*}
+\end{table}
 
 \subsection{Machine Learning Analysis} 
 For our reported sample central galaxy, $1604368$, we use a Random Forest regressor and classifier to find the predictive importance of different factors on $f_\textup{DM}$. Our regressor uses the criteria listed in Section \ref{Machine Learning Analysis Methodology} (test set of $20\%$, a random seed of $42$, $500$ estimators with a minimum split sample of $2$, and a minimum leaf sample of $1$). We use a Standard Scaler \cite{sciKitLearn} based on logarithmic stellar mass and logarithmic host mass to find $3$ control centrals for each DMDG central. The regressor, when using logarithmic stellar mass,  logarithmic host halo mass, gas mass fraction, stellar formation rate, maximum velocity, and nearest neighbor-satelite distance as features for a target of $f_\textup{DM}$, returns $R^2$ of $0.497$. However, the $R^2$ is significantly worse for DMDGs. The median residual (actual value - predicted value) was $-0.122$ for DMDGs, and $0.001$ for controls. Because the median DMDG $f_\textup{DM}$ was $0.486$, the median residual is enough to shift the DMDG's to a non-DMDG classification. We expect this difference is both due to the smaller DMDG population in our test set and the lack of distinct correlation for any of the features used. Stellar mass is given the highest feature importance ($0.258$), followed by stellar formation rate $0.251$) (Table \ref{feature importance rf centrals}). This somewhat opposes the patterns in Table \ref{feature importance rf}, which had $\frac{r}{R_{200c}}$ as the most impactful feature. We omitted this measure in our analysis and instead used distance to nearest satellite galaxy. We calculated this value by finding the lowest three-dimensional across all satellites in the corresponding group at snapshot 99. Distance to nearest satellite had the lowest feature importance of $0.027$.
@@ -411,26 +402,34 @@ Nearest satellite distance showed low predictive importance in RF classification
 
 Noticeably, the distribution of $f_\textup{DM}$ for centrals (Figure \ref{Central DMDGS}) exhibits significantly less skew than that of the satellites from Jing et al. (Figure \ref{fDM in Literature Resolved Galaxies}). The data is roughly balanced around the median $0.741$. Thus, it is unclear whether the DMDGs are formed via significant and contrasting processes or rather makeup the lower end of a normal distribution. The lack of predictive accuracy for DMDGs also decreases the statistical significance of feature importance values in our RF classifier and regression for centrals. Our case study analysis of DMDG is also relatively shallow and does not encompass all possible formation pathways. Further analysis into a larger population of centrals may be necessary to fully understand the evolutionary processes behind these formations.
 
-\section{$R_{\textup{half}, \star}$ Dependency and Relationship}
-In both the satellite and central populations, the DMDG section exhibited significantly less $R_{\textup{half}, \star}$ than their central counterpart population. This may be due to the calculation for $f_\textup{DM}$ (Equation \ref{fDM Calculation}) which relies on the included mass within $2R_{\textup{half}, \star}$. For smaller $2R_{\textup{half}, \star}$, it is possible that the focus is shifted towards the more tightly-bound, inner stellar mass and excludes loosely-bound dark matter. We further analyze this correlation throughout this section.
+\section{$R_{\textup{half}, \star}$ Comparisson and Residuals}
+Throughout both the literature selected satellite and central analysis, we find that the reported median $R_{\textup{half}, \star}$ is significantly lower for the selected DMDG group than general dataset and controls. We further examine this relationship by accounting for the statistical distribution and residuals at constant $M_\star$.
 
-We first analyze the relationship with $f_\textup{DM}$ (Figure \ref{R_half_star vs f_DM}). For literature selected satellites following the criteria of Jing et a. \cite{Jing_2019}, the reported Pearson correlation was $r=0.688$. For centrals, the Pearson correlation was $0.396$. Noticeably, the distribution for the centrals includes a wide range of $f_\textup{DM}$ at lower $R_{\textup{half}, \star}$ apart from the separate correlation. Both trends follow rounded, near-logarithmic trends with wider range of $f_\textup{DM}$ at lower $R_{\textup{half}, \star}$. 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{R_half_star vs f_DM.jpg}
-    \caption{$R_{\textup{half}, \star}$ plotted in comparison to $f_\textup{DM}$ for literature-selected satellites (left) and centrals (right) with DMDG value depicted by dashed line}
-    \label{R_half_star vs f_DM}
-\end{figure}
+$R_{\textup{half}, \star}$ is highly correlated to our measurement of $f_\textup{DM}$, as it is the chosen use of aperture encompassing stellar and dark matter mass (Equation \ref{f_DM Calculation}). The metric is given for each subhalo by the TNG 300-1 catalog and describes the radius in which half of the halos stellar mass is enclosed.
 
-We pursue a further relationship on the dependency on $f_\textup{DM}$ on $R_{\textup{half}, \star}$ through the prevalence of $M_\star$ (Figure \ref{R_half_star vs M_star}). This particular relationship is important for our analysis because $M_\star$ in $R_{\textup{half}, \star}$ accounts for the normalized scale of $M_\textup{DM}$. If a relationship is present and significant, this may affect our measurement's predictive accuracy and generalizability. Specifically, we highlight DMDGs to see if the correlation is different for DMDGs. Noticeably, for both centrals and satellites (literature) the DMDGs (red) were typically in the lower range of $R_{\textup{half}, \star}$, which correlates with the trens from Figure \ref{R_half_star vs f_DM}. There appears to be a generally positive correlation, especially with centrals ($r=0.86$). The satellite group had a much weaker correlation ($r=-0.016$). The correlation for centrals may be less indicative for DMDGs due to the smaller sample group.
+The distribution of $R_{\textup{half}, \star}$ for all satellites following Jing et al. \cite{Jing_2019}, DMDG satellites, all resolved centrals, and DMDG centrals is given by Figure \ref{R_half_star_distribution}. For the remainder of the analysis, we refer to resolved satellites by Jing et al. as satellites and resolved centrals as centrals. For both the satellite and central groups, the DMDG subgroup exhibits significantly lower $R_\{textup{half}, \star\}$ and a less expansive upper range. General centrals, in particular, experienced an outlier with significantly higher $R_{\textup{half}, \star}$ than its counterpart population. It is not clear whether the larger range is due to evolutionary pathways confining the available range of $R_{\textup{half}, \star}$ or a generally smaller sample set. To test this distribution, we perform a $t-$test between the respective DMDG and general groups. For central galaxies, the $t-$test yields a statistic of $-5.30$ witha $p-$value of $1.13 \times 10^{-7}$. The satellites yield a $t-$test statistic of $-39.9$ with a $p-$value of $0.0$. The higher $p-$value in the central group is likely due to the smaller sample size of DMDGs. The recorded median values of $R_{\textup{half}, \star}$ for centrals and central DMDGS are $3.419$ and $2.101$, respectively. The median values satellites and satellite DMDGs are $2.966$ and $1.257$, respectively. 
 
-\begin{figure}
-    \centering
-    \includegraphics[width=1\linewidth]{R_half_star vs M_star.jpg}
-    \caption{$R_{\textup{half}, \star}$ plotted against stellar mass ($M_\star / M_\odot$ ) for staellite galaxies from literature selection (left) and central galaxies (right). non-extreme DMDGs are indicated in red and non-DMDGs are indicated in blue. }
-    \label{R_half_star vs M_star}
-\end{figure}
-\section{Conclusions}
+The strong variance in medians and overall distribution of $R_{\textup{half}, \star}$ are preliminary evidence that DMDGs may exhibit more concentrated mass than their non-DMDG counterparts. This would be a pattern consistent with strong, tightly-bound stellar mass in contrast to loosely spread dark matter. Further analysis is nescessary to define this correlation and find if it is a distinct characteristic of DMDGs, correlated with the defining metrics of $f_\textup{DM}$.
+
+In attempt to define a direct correlation between $f_\textup{DM}$ and $R_{\textup{half}, \star}$, we analyze the relationship in Figure \ref{R_half_star vs f_DM} for both satellites and centrals. Both show primarily positive correlations ($\rho=0.745$ and $\rho = 0.504$, respectively). This is consistent with the distribution from Figure \ref{R_half_star_distribution} such that smaller values $R_{\textup{half}, \star}$  were associated with DMDG status and thus lower $f_\textup{DM}$. The correlation is not inherently linear and includes a degree of scatter associated with stochatic halo formation processes. Although both satellites and centrals display a curved relationship, that of central galaxies appears to have a vertical spike and spread at the lowest level of $R_{\textup{half}, \star}$. 
+
+Based on the relationship between $f_\textup{DM}$, $R_{\textup{half}, \star}$ and $M_\star$, we form a predictive model using a second degree polynomial regression predicting logarithmic $R_{\textup{half}, \star}$ based on an independent logarithmic stellar mass. We found that, for the centrals dataset excluding DMDGs, the second degree polynomial regression produces a higher $R^2$ predictive measurement than first and third degrees. We do not perform residual analysis on our satellite population due to a preliminary flat correlation between the two variables. The central polynomial regression equation is given by Equation \ref{expected residuals}.
+
+\begin{equation}
+\label{expected residuals}
+\log R_{\textup{half,} \star} = 66.8553 -5.7237 \log M_\star +0.1246 \log M_\star^2
+\end{equation}
+
+We note that our regression is made solely off of non-DMDG centrals. This allows us to ensure the model is not over-fitted to DMDGs and that our residuals are reflective of comparisson to the control dataset. Residuals ar calculated both for DMDG and non-DMDG centrals. The residual is calculated by Equation \ref{residual calculation}. We model residuals against $M_\star$ in Figure \ref{second degree residuals}. Although the general residual trend is constant and centered around $0.0$, there is a diverging trend for DMDGs (indicated in red). The left pannel isolates this trend and displays a negative correlation. We employ a Mann-Whitney U statistical test, which produces a result of $285800$ with $p-$value $9.426 \times 10^{-57}$. The median residual for the control (non-DMDG) centrals was $-0.018$, and the median residual for DMDGs was $-0.582$. 
+
+The key relationship shows that, across the range of $M_\star$, DMDGs show distinctly smaller values of $R_{\textup{half}, \star}$ and hold a more compacted shape. Furthermore, more massive DMDGs have even more compact structure. This correlation may not be causal. $f_\textup{DM}$, $R_{\textup{half}, \star}$ and $M_\star$ are inherently related through the calculation of $f_\textup{DM}$. However, this relationship alone is not enough to define the correlation between DMDGs. It is likely that the $R_{\textup{half}, \star}$ trend with $f_\textup{DM}$ may be a result of external stellar and dark matter mass being stripped through interactions and gravitational effects. More massive DMDGs may be subject to stronger gravitational effects or more strongly clustered stellar mass. Further analysis into the active formation of DMDGs is nescessary to designate the causal pathway for this relationship.
+
+\begin{equation}
+\label{residual calculation}
+\Delta \log R_{\textup{half,} \star} = \log R_{\textup{half,} \star \textup{, actual}} - \log R_{\textup{half,} \star \textup{, expected}}
+\end{equation}
+
+\section{Conclusion}
 
 Your conclusions here.
 \acknowledgments
